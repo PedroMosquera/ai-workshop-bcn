@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Workshop Decks</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;500&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+:root {
+    --bg: #0F1628; --card: #1A2440; --border: #2E3A56;
+    --text: #FFFFFF; --text-2: #B0B5BD; --teal: #49C2B3; --blue: #3BACF0;
+    --spectrum: linear-gradient(90deg, #49C2B3, #3BACF0, #1966FF, #5E28E5, #8D1CDC, #C93FDB);
+}
+@media (prefers-color-scheme: light) {
+    :root { --bg: #F9FAFB; --card: #FFFFFF; --border: #E5E7EB; --text: #1A2440; --text-2: #6F747F; --teal: #327379; --blue: #1966FF; }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', Arial, sans-serif; font-weight: 300; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+body::before { content: ""; height: 4px; background: var(--spectrum); }
+main { width: 100%; max-width: 880px; margin: auto; padding: clamp(2rem, 6vw, 4rem) 16px; display: flex; flex-direction: column; gap: 1.5rem; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); }
+h1 { font-weight: 500; font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.1; }
+p.lede { color: var(--text-2); font-size: clamp(1rem, 2vw, 1.15rem); line-height: 1.5; }
+.decks { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+a.deck { display: flex; flex-direction: column; gap: .5rem; padding: 1.25rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px; color: inherit; text-decoration: none; transition: border-color .2s; }
+a.deck:hover, a.deck:focus-visible { border-color: var(--blue); outline: none; }
+a.deck h2 { font-weight: 500; font-size: 1.25rem; }
+a.deck p { color: var(--text-2); line-height: 1.45; }
+a.deck span { font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: var(--blue); margin-top: auto; }
+footer { color: var(--text-2); font-size: .85rem; }
+</style>
+</head>
+<body>
+<main>
+    <div class="eyebrow">AI Lunch &amp; Workshop · Session 1</div>
+    <h1>Workshop decks</h1>
+    <p class="lede">Two browser decks. Use the arrow keys to move, T to switch theme, N for speaker notes, and <code>?slide=N</code> to link a slide.</p>
+    <div class="decks">
+        <a class="deck" href="build.html"><h2>Parking app build</h2><p>The build brief: mission, four sprints, five checkpoints, the status board and demos.</p><span>build.html</span></a>
+        <a class="deck" href="playbook.html"><h2>A way of working with AI</h2><p>Draft playbook: CLAUDE.md, spec, journal, commands, guards and day-to-day habits.</p><span>playbook.html</span></a>
+    </div>
+    <footer>The status board saves marks in the presenting browser only.</footer>
+</main>
+</body>
+</html>

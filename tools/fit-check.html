@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0}iframe{border:0;display:block}</style></head><body>
+<iframe id="f"></iframe><pre id="out"></pre>
+<script>
+const q=new URLSearchParams(location.search);
+const W=+(q.get('w')||1280),H=+(q.get('h')||720),slide=q.get('slide'),theme=q.get('theme')||'dark';
+const f=document.getElementById('f');f.width=W;f.height=H;
+f.onload=()=>setTimeout(()=>{
+ const d=f.contentDocument;d.documentElement.dataset.theme=theme;
+ const st=d.createElement('style');st.textContent='*{transition:none!important;animation:none!important}html{scroll-behavior:auto!important}';d.head.appendChild(st);
+ const slides=[...d.querySelectorAll('.slide')];slides.forEach(s=>s.classList.add('visible'));
+ if(slide!==null){slides[+slide].scrollIntoView();document.getElementById('out').remove();return;}
+
+ if(q.get('inject')){const x=d.createElement('div');x.style.height='900px';x.style.flexShrink='0';slides[1].querySelector('.slide-content').appendChild(x);} const res=[];
+ slides.forEach((s,i)=>{s.scrollIntoView();const sr=s.getBoundingClientRect();
+  const c=s.querySelector('.slide-content');const issues=[];
+  if(c&&c.scrollHeight>c.clientHeight+1)issues.push(`content scrollH ${c.scrollHeight}>${c.clientHeight}`);
+  s.querySelectorAll('.slide-content *').forEach(el=>{const r=el.getBoundingClientRect();if(!r.width)return;
+   if(r.top<sr.top-1||r.bottom>sr.bottom+1||r.right>sr.right+1)issues.push(`${el.tagName}.${el.className} b=${Math.round(r.bottom-sr.top)} r=${Math.round(r.right)}`);
+   if(el.tagName==='PRE'&&el.scrollHeight>el.clientHeight+1)issues.push('pre clipped');});
+  res.push(`${i+1}: ${issues.length?issues.slice(0,4).join(' | '):'ok'}`);});
+ document.getElementById('out').textContent=res.join('\n');
+},1500);
+f.src=q.get('deck')||'deck.html';
+</script></body></html>

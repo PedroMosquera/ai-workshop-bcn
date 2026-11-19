@@ -1,0 +1,91 @@
+# Rebuilds the HTML decks from decks/*.md, tests them, checks every slide fits and commits them, so GitHub Pages (published from main) always
+# serves what the markdown says. On a pull request it rebuilds the PR branch and comments preview links.
+name: Build decks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - decks/**
+      - template/**
+      - build.py
+      - tests/**
+      - tools/**
+      - .github/workflows/build-decks.yml
+  pull_request:
+    paths:
+      - decks/**
+      - template/**
+      - build.py
+      - tests/**
+      - tools/**
+      - .github/workflows/build-decks.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write        # commit the rebuilt HTML
+  pages: write           # ask Pages to publish it
+  pull-requests: write   # preview links comment
+
+concurrency:
+  group: build-decks-${{ github.head_ref || github.ref_name }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # Pull requests from forks get a read-only token: build and test them, but don't push or comment.
+      SAME_REPO: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: Build the decks
+        run: python3 build.py
+
+      - name: Test
+        run: python3 -m unittest discover -t . -s tests
+
+      # Every slide must fit its screen at 4 sizes in both themes (see AGENTS.md).
+      # Chrome's sandbox does not start on the hosted Ubuntu runners; it only loads our own decks here.
+      - name: Check every slide fits
+        run: |
+          printf '#!/bin/sh\nexec google-chrome --no-sandbox "$@"\n' > "$RUNNER_TEMP/chrome"
+          chmod +x "$RUNNER_TEMP/chrome"
+          CHROME="$RUNNER_TEMP/chrome" tools/fit-check.sh
+
+      - name: Commit the rebuilt HTML
+        if: env.SAME_REPO == 'true'
+        run: |
+          git add build.html playbook.html
+          if git diff --cached --quiet; then
+            echo "HTML already matches the markdown"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Rebuild decks from markdown"
+          git push
+
+      # Pushes made with the workflow token may not start a Pages build on their own, so ask for one.
+      - name: Publish to GitHub Pages
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
+
+      - name: Comment preview links
+        if: github.event_name == 'pull_request' && env.SAME_REPO == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.head_ref }}
+        run: |
+          base="https://htmlpreview.github.io/?https://github.com/${{ github.repository }}/blob/${BRANCH}"
+          body="**Preview of this branch** (rebuilt from the markdown)
+          - [Parking app build](${base}/build.html)
+          - [A way of working with AI](${base}/playbook.html)
+
+          Rendered by htmlpreview.github.io from the branch's latest commit. Refresh after new pushes."
+          gh pr comment "${{ github.event.pull_request.number }}" --edit-last --create-if-none --body "$body"

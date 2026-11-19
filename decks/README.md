@@ -74,6 +74,7 @@ Notes:                        # speaker notes (N key), one bullet each
 | `[[o: text]] {style="…"}` | a single tag with attributes |
 | `@board` | the interactive status board (`template/board.html`) |
 | `!! CP1` | the big checkpoint number (`<span class="cp-num">`) |
+| `![caption](photos/x.webp)` | a photo from `template/assets/` with its caption, inlined at build time; put several inside `::: photos` to show them side by side |
 | ```` ``` ```` … ```` ``` ```` | a coloured code block, see below |
 
 **Code blocks.** Write the content as-is between ```` ``` ```` lines. Lines starting with `#` or `//` are coloured as headings. Mark other words to colour them:

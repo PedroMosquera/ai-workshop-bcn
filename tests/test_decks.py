@@ -85,6 +85,11 @@ class DecksMatchTheirMarkdown(unittest.TestCase):
                 self.assertEqual(block_lines(built, "style"), block_lines(expected, "style"), "CSS lines")
                 self.assertEqual(block_lines(built, "script"), block_lines(expected, "script"), "JS lines")
 
+    def test_every_placeholder_is_filled(self):
+        for source in DECKS.values():
+            with self.subTest(source=source):
+                self.assertEqual(re.findall(r"\{\{[^}]*\}\}", build.build_deck(ROOT / source)), [])
+
 
 if __name__ == "__main__":
     unittest.main()

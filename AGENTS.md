@@ -63,6 +63,7 @@ Reuse these classes instead of writing new CSS. Most have a markdown shortcut (`
 - Tags: `tag`, `tag b`, `tag v`, `tag o` (same colour order as the accents).
 - Lists: `checklist` (with `<span class="box"></span>`), `bullet-list`.
 - Timeline: `agenda` + `agenda-bar` (the evening), `cp-track` + `cp-step` (checkpoint overview).
+- Photos: `photos` (a row of `![caption](photos/x.webp)` lines). Keep them small: about 1400px wide webp, under 150 KB, each one is inlined in the page. Blur number plates and faces first; the site is public.
 - Motion: `reveal` on a single element, `stagger` on a container whose children appear one by one.
 
 The class names `g` / `v` / `o` predate the current palette (they meant green, violet, orange). They now map to teal, purple and pink. Keep using them; do not rename.

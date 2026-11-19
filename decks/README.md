@@ -7,7 +7,7 @@ Each deck is one markdown file here. `build.py` turns it into the HTML page that
 | `decks/build.md` | `build.html` |
 | `decks/playbook.md` | `playbook.html` |
 
-Edit the `.md` and push. The `Build decks` workflow (`.github/workflows/build-decks.yml`) rebuilds the HTML, runs the tests and commits the result: on `main` GitHub Pages then publishes it, and on a pull request it comments links to preview the branch in a browser.
+Edit the `.md` and push. The `Build decks` workflow (`.github/workflows/build-decks.yml`) rebuilds the HTML, runs the tests and `tools/fit-check.sh`, and commits the result: on `main` GitHub Pages then publishes it, and on a pull request it comments links to preview the branch in a browser.
 
 To see a change before pushing, build locally and open the `.html`:
 

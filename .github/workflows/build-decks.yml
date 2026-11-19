@@ -1,4 +1,4 @@
-# Rebuilds the HTML decks from decks/*.md and commits them, so GitHub Pages (published from main) always
+# Rebuilds the HTML decks from decks/*.md, tests them, checks every slide fits and commits them, so GitHub Pages (published from main) always
 # serves what the markdown says. On a pull request it rebuilds the PR branch and comments preview links.
 name: Build decks
 
@@ -10,6 +10,7 @@ on:
       - template/**
       - build.py
       - tests/**
+      - tools/**
       - .github/workflows/build-decks.yml
   pull_request:
     paths:
@@ -17,6 +18,7 @@ on:
       - template/**
       - build.py
       - tests/**
+      - tools/**
       - .github/workflows/build-decks.yml
   workflow_dispatch:
 
@@ -45,6 +47,14 @@ jobs:
 
       - name: Test
         run: python3 -m unittest discover -t . -s tests
+
+      # Every slide must fit its screen at 4 sizes in both themes (see AGENTS.md).
+      # Chrome's sandbox does not start on the hosted Ubuntu runners; it only loads our own decks here.
+      - name: Check every slide fits
+        run: |
+          printf '#!/bin/sh\nexec google-chrome --no-sandbox "$@"\n' > "$RUNNER_TEMP/chrome"
+          chmod +x "$RUNNER_TEMP/chrome"
+          CHROME="$RUNNER_TEMP/chrome" tools/fit-check.sh
 
       - name: Commit the rebuilt HTML
         if: env.SAME_REPO == 'true'

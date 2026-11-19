@@ -16,7 +16,7 @@ Read this before changing anything. The goal is that every edit, by a person or 
 | `build.py` | Turns `decks/*.md` into the HTML decks. Python 3.9+, no packages. |
 | `template/` | Shared page (`deck.html`), deck-only CSS and JS (`build.*`, `playbook.*`), status board, logo, fonts and images. |
 | `tests/` | Syntax tests and a check that each HTML deck matches its markdown. |
-| `.github/workflows/build-decks.yml` | Rebuilds, tests and commits the decks; comments preview links on pull requests. |
+| `.github/workflows/build-decks.yml` | Rebuilds, tests, fit-checks and commits the decks; comments preview links on pull requests. |
 | `tools/fit-check.sh` | Checks every slide fits its viewport (4 sizes x 2 themes). Run it before every push. |
 | `tools/fit-check.html` | The in-browser checker the script drives. |
 
@@ -87,7 +87,7 @@ Find them with `grep -n -E '1[78]:[0-9]{2}' decks/build.md`.
 
 ## Before you push
 
-1. `python3 build.py` and `python3 -m unittest discover -t . -s tests` must pass. The workflow runs them too, but the fit check below reads the built HTML.
+1. `python3 build.py` and `python3 -m unittest discover -t . -s tests` must pass. The workflow runs them and the fit check below too, but run them before pushing: the fit check reads the built HTML.
 2. `tools/fit-check.sh` must print only `ok` lines and end with `sanity: planted overflow detected`. It needs Google Chrome and python3 (set `CHROME` if Chrome is not in `/Applications`).
 3. Open the deck locally, step through the slides you touched in both themes, and open the notes panel (N).
 4. No em or en dashes in added lines: `git diff | perl -CS -ne 'print if /^\+.*[\x{2013}\x{2014}]/'` must print nothing.

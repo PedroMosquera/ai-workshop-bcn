@@ -212,10 +212,6 @@ pre .k { color: #49C2B3; } pre .s { color: #3BACF0; } pre .w { color: #D979E6; }
 
 /* === CHECKPOINT DETAIL SLIDES === */
 .cp-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--content-gap); align-items: center; }
-.cp-num {
-    font-family: var(--mono); font-weight: 500; line-height: .9;
-    font-size: clamp(3rem, 11vw, 8rem); color: transparent; -webkit-text-stroke: 1.5px var(--cp-color, var(--teal));
-}
 .cp-meta { display: flex; gap: .5rem; flex-wrap: wrap; }
 .cp-left { display: flex; flex-direction: column; gap: clamp(.4rem, 1.2vh, .9rem); }
 .cp-right { display: flex; flex-direction: column; gap: clamp(.45rem, 1.2vh, .8rem); }
@@ -257,6 +253,7 @@ pre .k { color: #49C2B3; } pre .s { color: #3BACF0; } pre .w { color: #D979E6; }
     border: 1px solid var(--card-border); border-radius: 6px; padding: .2em .6em; cursor: pointer; margin-left: auto;
 }
 
+/* === BRAND CHROME: background images (dark only), logo placement, gradient bar === */
 /* === PLAYBOOK: layers, file list, hazards, copy buttons === */
 .layers { display: flex; flex-direction: column; gap: clamp(4px, .8vh, 8px); }
 .layer {
@@ -286,8 +283,10 @@ pre { position: relative; }
 .copy-btn svg { width: 14px; height: 14px; }
 .copy-btn .i-ok { display: none; color: #49C2B3; }
 .copy-btn.copied .i-ok { display: block; } .copy-btn.copied .i-copy { display: none; }
-
-/* === BRAND CHROME: background images (dark only), logo placement, gradient bar === */
+.cp-num {
+    font-family: var(--mono); font-weight: 500; line-height: .9;
+    font-size: clamp(3rem, 11vw, 8rem); color: transparent; -webkit-text-stroke: 1.5px var(--cp-color, var(--teal));
+}
 .bg-overlay { display: none; position: absolute; inset: 0; background: rgba(26,36,64,var(--bg-overlay-opacity,.55)); z-index: 0; pointer-events: none; }
 [data-theme="dark"] .slide.bg-img { background-size: cover; background-position: center; background-attachment: fixed; }
 [data-theme="dark"] .slide.bg-img::before { display: none; }
@@ -388,7 +387,6 @@ aside.notes { display: none; }
 <div class="notes-panel" id="notesPanel" role="region" aria-label="Organizer notes"><h4>Organizer notes</h4><div id="notesBody"></div></div>
 
 <main>
-
 <!-- 01 TITLE -->
 <section class="slide title-slide bg-img bg-title">
     <div class="bg-overlay"></div>
@@ -410,12 +408,36 @@ aside.notes { display: none; }
         <div class="eyebrow reveal">Five principles · everyone</div>
         <h2 class="reveal">The rules behind everything else</h2>
         <div class="cols-3 stagger">
-            <div class="card accent-g"><span class="tag">01</span><h3>Evidence over claims</h3><p>"Done", "works", "fixed" only count with <strong>what was run and what it printed</strong>. "Should work" is not a status.</p></div>
-            <div class="card accent-o"><span class="tag o">02</span><h3>A check that can't fail proves nothing</h3><p>Make every test or check go red once, on purpose. A green you never saw red is a guess.</p></div>
-            <div class="card accent-b"><span class="tag b">03</span><h3>Simple wins</h3><p>The default answer to a new layer, option, flag or dependency is <strong>no</strong>. Complexity has to argue its way in.</p></div>
-            <div class="card accent-v"><span class="tag v">04</span><h3>Say what you didn't check</h3><p>Every "done" ends with what was <strong>not</strong> verified. Silence about a gap reads as "there is no gap".</p></div>
-            <div class="card accent-g"><span class="tag">05</span><h3>Say it once</h3><p>Preferences go in files that load every session, not in prompts you retype every day.</p></div>
-            <div class="card"><span class="tag o">and</span><h3>Remembered vs enforced</h3><p>Files are <strong>remembered</strong> and can be ignored. Guards are <strong>enforced</strong>. Important rules get both.</p></div>
+            <div class="card accent-g">
+                <span class="tag">01</span>
+                <h3>Evidence over claims</h3>
+                <p>"Done", "works", "fixed" only count with <strong>what was run and what it printed</strong>. "Should work" is not a status.</p>
+            </div>
+            <div class="card accent-o">
+                <span class="tag o">02</span>
+                <h3>A check that can't fail proves nothing</h3>
+                <p>Make every test or check go red once, on purpose. A green you never saw red is a guess.</p>
+            </div>
+            <div class="card accent-b">
+                <span class="tag b">03</span>
+                <h3>Simple wins</h3>
+                <p>The default answer to a new layer, option, flag or dependency is <strong>no</strong>. Complexity has to argue its way in.</p>
+            </div>
+            <div class="card accent-v">
+                <span class="tag v">04</span>
+                <h3>Say what you didn't check</h3>
+                <p>Every "done" ends with what was <strong>not</strong> verified. Silence about a gap reads as "there is no gap".</p>
+            </div>
+            <div class="card accent-g">
+                <span class="tag">05</span>
+                <h3>Say it once</h3>
+                <p>Preferences go in files that load every session, not in prompts you retype every day.</p>
+            </div>
+            <div class="card">
+                <span class="tag o">and</span>
+                <h3>Remembered vs enforced</h3>
+                <p>Files are <strong>remembered</strong> and can be ignored. Guards are <strong>enforced</strong>. Important rules get both.</p>
+            </div>
         </div>
     </div>
     <aside class="notes"><ul><li>If the audience keeps one slide, it is this one. Principles 01 and 02 are the CP4 message of the build deck.</li></ul></aside>
@@ -445,7 +467,7 @@ aside.notes { display: none; }
         <div class="eyebrow reveal">CLAUDE.md · everyone</div>
         <h2 class="reveal">A project file the AI reads every time</h2>
         <div class="cols-2">
-<pre class="reveal"><span class="p"># Parking app</span>
+            <pre class="reveal"><span class="p"># Parking app</span>
 <span class="k">Run:</span>  npm run dev      <span class="k">Test:</span> npm test
 <span class="k">Stack:</span> (one line)
 
@@ -458,9 +480,18 @@ aside.notes { display: none; }
 - End every reply with "Waiting on you:" and
   numbered questions, or "nothing".</pre>
             <div class="stagger" style="display:flex; flex-direction:column; gap:clamp(.5rem,1.4vh,.9rem)">
-                <div class="card accent-g"><h3>Short beats complete</h3><p>It loads every session and costs tokens every time. The docs suggest <strong>under 200 lines</strong>. Start with ten.</p></div>
-                <div class="card accent-b"><h3>Start from <code>/init</code></h3><p>It drafts one from your repo. Then delete half of it.</p></div>
-                <div class="card accent-o"><h3>It is a request, not a law</h3><p>The AI can still ignore a line. Anything that must never happen gets a guard too.</p></div>
+                <div class="card accent-g">
+                    <h3>Short beats complete</h3>
+                    <p>It loads every session and costs tokens every time. The docs suggest <strong>under 200 lines</strong>. Start with ten.</p>
+                </div>
+                <div class="card accent-b">
+                    <h3>Start from <code>/init</code></h3>
+                    <p>It drafts one from your repo. Then delete half of it.</p>
+                </div>
+                <div class="card accent-o">
+                    <h3>It is a request, not a law</h3>
+                    <p>The AI can still ignore a line. Anything that must never happen gets a guard too.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -481,7 +512,7 @@ aside.notes { display: none; }
                 <li><code>private-data.md</code><span>My email and personal data never leave the machine.</span></li>
                 <li><code>version-bumps.md</code><span>Never bump a version unless I ask.</span></li>
             </ul>
-<pre class="reveal"><span class="p"># ~/.claude/rules/evidence.md</span>
+            <pre class="reveal"><span class="p"># ~/.claude/rules/evidence.md</span>
 Never report "done", "works" or "fixed"
 without naming the command you ran and
 what its output proved.
@@ -503,7 +534,7 @@ Every completion ends with a
         <div class="eyebrow reveal">spec.md · everyone</div>
         <h2 class="reveal">Write it before you build it</h2>
         <div class="cols-2">
-<pre class="reveal"><span class="p"># &lt;Feature&gt;: spec</span>
+            <pre class="reveal"><span class="p"># &lt;Feature&gt;: spec</span>
 <span class="k">Problem:</span>  what hurts, for whom, today
 <span class="k">Users:</span>    who uses it, how often
 <span class="k">Stories:</span>  As a ... I want ... so that ...
@@ -515,9 +546,18 @@ Every completion ends with a
 <span class="k">Open questions / assumptions:</span>
 <span class="k">Not verified:</span> (filled in when done)</pre>
             <div class="stagger" style="display:flex; flex-direction:column; gap:clamp(.5rem,1.4vh,.9rem)">
-                <div class="card accent-g"><h3>The test for a criterion</h3><p>Could <strong>someone else</strong> close the task against it without asking you? If not, rewrite it.</p></div>
-                <div class="card accent-o"><h3>Out of scope saves money</h3><p>The AI loves adding features. Naming what you won't build keeps it, and the bill, small.</p></div>
-                <div class="card accent-b"><h3>Let it interview you</h3><p>"Read spec.md and ask me up to 5 questions before you plan." Then edit the spec with the answers.</p></div>
+                <div class="card accent-g">
+                    <h3>The test for a criterion</h3>
+                    <p>Could <strong>someone else</strong> close the task against it without asking you? If not, rewrite it.</p>
+                </div>
+                <div class="card accent-o">
+                    <h3>Out of scope saves money</h3>
+                    <p>The AI loves adding features. Naming what you won't build keeps it, and the bill, small.</p>
+                </div>
+                <div class="card accent-b">
+                    <h3>Let it interview you</h3>
+                    <p>"Read spec.md and ask me up to 5 questions before you plan." Then edit the spec with the answers.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -530,7 +570,7 @@ Every completion ends with a
         <div class="eyebrow reveal">journal.md · everyone</div>
         <h2 class="reveal">Keep a log of how the AI was used</h2>
         <div class="cols-2">
-<pre class="reveal"><span class="p"># journal.md</span>
+            <pre class="reveal"><span class="p"># journal.md</span>
 <span class="k">Task:</span>
 <span class="k">Tools &amp; models:</span>    e.g. Claude Code, Sonnet
 <span class="k">Usage:</span>             before ___  after ___
@@ -540,8 +580,14 @@ Every completion ends with a
 <span class="k">What I'd change next time:</span>
 <span class="k">Rule to add?</span>       (CLAUDE.md / rules / guard)</pre>
             <div class="stagger" style="display:flex; flex-direction:column; gap:clamp(.5rem,1.4vh,.9rem)">
-                <div class="card accent-g"><h3>Cost is part of the result</h3><p>Note usage before the first prompt and after the last. Compare tasks, not feelings.</p></div>
-                <div class="card accent-v"><h3>The last line is the point</h3><p>Every "where it went wrong" is a candidate rule or guard. That is how the setup grows.</p></div>
+                <div class="card accent-g">
+                    <h3>Cost is part of the result</h3>
+                    <p>Note usage before the first prompt and after the last. Compare tasks, not feelings.</p>
+                </div>
+                <div class="card accent-v">
+                    <h3>The last line is the point</h3>
+                    <p>Every "where it went wrong" is a candidate rule or guard. That is how the setup grows.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -554,12 +600,30 @@ Every completion ends with a
         <div class="eyebrow reveal">Commands · intermediate</div>
         <h2 class="reveal">Start each kind of work the same way</h2>
         <div class="cols-3 stagger">
-            <div class="card accent-g"><span class="tag">/feature</span><p>Agree what "done" means, name what could break, slice it small. <strong>Before</strong> any code.</p></div>
-            <div class="card accent-o"><span class="tag o">/bug</span><p>Reproduce it and get a <strong>failing test</strong> first. Only then fix it.</p></div>
-            <div class="card accent-v"><span class="tag v">/idea</span><p>Challenge the premise before designing anything. Is this the right problem?</p></div>
-            <div class="card accent-b"><span class="tag b">/research</span><p>Name the decision it informs and <strong>when to stop</strong>, before reading anything.</p></div>
-            <div class="card accent-g"><span class="tag">/review</span><p>Decide what you are reviewing for, then verify each claim instead of trusting it.</p></div>
-            <div class="card accent-o"><span class="tag o">/feedback</span><p>Check each review comment is actually true before acting on it, or pushing back.</p></div>
+            <div class="card accent-g">
+                <span class="tag">/feature</span>
+                <p>Agree what "done" means, name what could break, slice it small. <strong>Before</strong> any code.</p>
+            </div>
+            <div class="card accent-o">
+                <span class="tag o">/bug</span>
+                <p>Reproduce it and get a <strong>failing test</strong> first. Only then fix it.</p>
+            </div>
+            <div class="card accent-v">
+                <span class="tag v">/idea</span>
+                <p>Challenge the premise before designing anything. Is this the right problem?</p>
+            </div>
+            <div class="card accent-b">
+                <span class="tag b">/research</span>
+                <p>Name the decision it informs and <strong>when to stop</strong>, before reading anything.</p>
+            </div>
+            <div class="card accent-g">
+                <span class="tag">/review</span>
+                <p>Decide what you are reviewing for, then verify each claim instead of trusting it.</p>
+            </div>
+            <div class="card accent-o">
+                <span class="tag o">/feedback</span>
+                <p>Check each review comment is actually true before acting on it, or pushing back.</p>
+            </div>
         </div>
         <p class="small reveal">Each one is a short saved prompt. The point is that the first five minutes of each kind of work always go the same, good way.</p>
     </div>
@@ -572,7 +636,7 @@ Every completion ends with a
         <div class="eyebrow reveal">Commands · make your own</div>
         <h2 class="reveal">A command is one markdown file</h2>
         <div class="cols-2">
-<pre class="reveal"><span class="p"># .claude/skills/bug/SKILL.md</span>
+            <pre class="reveal"><span class="p"># .claude/skills/bug/SKILL.md</span>
 ---
 <span class="k">name:</span> bug
 <span class="k">description:</span> Start a bug fix. Use when
@@ -587,9 +651,18 @@ Before changing any code:
 
 Bug: <span class="s">$ARGUMENTS</span></pre>
             <div class="stagger" style="display:flex; flex-direction:column; gap:clamp(.5rem,1.4vh,.9rem)">
-                <div class="card accent-b"><h3>Where it goes</h3><p><code>.claude/skills/&lt;name&gt;/SKILL.md</code> for the project, <code>~/.claude/skills/</code> for you. Then type <code>/bug the date picker shows yesterday</code>.</p></div>
-                <div class="card accent-g"><h3>Older style still works</h3><p>Files in <code>.claude/commands/&lt;name&gt;.md</code> keep working. The docs recommend skills for new ones.</p></div>
-                <div class="card accent-v"><h3>Good first commands</h3><p>The steps you keep forgetting: run the tests, check the spec, write the PR summary.</p></div>
+                <div class="card accent-b">
+                    <h3>Where it goes</h3>
+                    <p><code>.claude/skills/&lt;name&gt;/SKILL.md</code> for the project, <code>~/.claude/skills/</code> for you. Then type <code>/bug the date picker shows yesterday</code>.</p>
+                </div>
+                <div class="card accent-g">
+                    <h3>Older style still works</h3>
+                    <p>Files in <code>.claude/commands/&lt;name&gt;.md</code> keep working. The docs recommend skills for new ones.</p>
+                </div>
+                <div class="card accent-v">
+                    <h3>Good first commands</h3>
+                    <p>The steps you keep forgetting: run the tests, check the spec, write the PR summary.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -613,8 +686,12 @@ Bug: <span class="s">$ARGUMENTS</span></pre>
             <div class="hz"><strong>Personal data</strong><span>retention, consent</span></div>
         </div>
         <div class="cols-2 stagger">
-            <div class="card accent-o"><p><strong>One or more?</strong> More verification: tests that fail first, a second reviewer, a careful rollout. A small diff does not remove a hazard.</p></div>
-            <div class="card accent-g"><p><strong>None?</strong> That is the usual answer. Normal tests, lint, done. Over-checking a routine change is waste too.</p></div>
+            <div class="card accent-o">
+                <p><strong>One or more?</strong> More verification: tests that fail first, a second reviewer, a careful rollout. A small diff does not remove a hazard.</p>
+            </div>
+            <div class="card accent-g">
+                <p><strong>None?</strong> That is the usual answer. Normal tests, lint, done. Over-checking a routine change is waste too.</p>
+            </div>
         </div>
     </div>
     <aside class="notes"><ul><li>Name the hazards, do not grade them. A grade invites "it's only a little risky".</li></ul></aside>
@@ -627,17 +704,16 @@ Bug: <span class="s">$ARGUMENTS</span></pre>
         <h2 class="reveal">Files are remembered. Guards are enforced.</h2>
         <div class="cols-2">
             <div class="stagger" style="display:flex; flex-direction:column; gap:clamp(.45rem,1.2vh,.8rem)">
-                <div class="card accent-g"><h3>Examples from a real setup</h3>
-                    <ul class="bullet-list">
-                        <li>Block commit or PR text that carries AI attribution lines or banned characters</li>
-                        <li>Block any request that contains my email address</li>
-                        <li>When an agent stops, list the comments it added and ask if each one earns its place</li>
-                        <li>Warn when UI code uses emoji as icons</li>
-                    </ul>
+                <div class="card accent-g">
+                    <h3>Examples from a real setup</h3>
+                    <ul class="bullet-list"><li>Block commit or PR text that carries AI attribution lines or banned characters</li><li>Block any request that contains my email address</li><li>When an agent stops, list the comments it added and ask if each one earns its place</li><li>Warn when UI code uses emoji as icons</li></ul>
                 </div>
-                <div class="card accent-o"><h3>How it works</h3><p>A script runs before a tool call. <strong>Exit code 2 blocks the call</strong>, and its message goes back to the AI so it can fix the attempt.</p></div>
+                <div class="card accent-o">
+                    <h3>How it works</h3>
+                    <p>A script runs before a tool call. <strong>Exit code 2 blocks the call</strong>, and its message goes back to the AI so it can fix the attempt.</p>
+                </div>
             </div>
-<pre class="reveal"><span class="p">// .claude/settings.json</span>
+            <pre class="reveal"><span class="p">// .claude/settings.json</span>
 { "hooks": { "PreToolUse": [{
     "matcher": "Bash",
     "hooks": [{ "type": "command",
@@ -647,7 +723,7 @@ Bug: <span class="s">$ARGUMENTS</span></pre>
 <span class="p"># ~/.claude/hooks/no-force-push.sh</span>
 cmd=$(jq -r '.tool_input.command // ""')
 if grep -qE 'git push.*(--force|-f)' &lt;&lt;&lt;"$cmd"; then
-  echo "Blocked: no force-push. Ask a human." >&2
+  echo "Blocked: no force-push. Ask a human." &gt;&amp;2
   exit 2
 fi</pre>
         </div>
@@ -661,11 +737,22 @@ fi</pre>
         <div class="eyebrow reveal">Sub-agents · intermediate</div>
         <h2 class="reveal">Fresh eyes and side work</h2>
         <div class="cols-3 stagger">
-            <div class="card accent-b"><h3>Side work goes to a side agent</h3><p>Long test runs, doc lookups, wide searches: a sub-agent does them and returns <strong>the short answer</strong>. Your main conversation stays small and cheap.</p></div>
-            <div class="card accent-g"><h3>Don't grade your own homework</h3><p>Review with an agent that has not seen your reasoning. Give it the code and the spec, not your conclusion.</p></div>
-            <div class="card accent-v"><h3>Real example</h3><p>Preparing these decks, a docs-checking agent caught <strong>three wrong commands</strong> on the slides before anyone saw them.</p></div>
+            <div class="card accent-b">
+                <h3>Side work goes to a side agent</h3>
+                <p>Long test runs, doc lookups, wide searches: a sub-agent does them and returns <strong>the short answer</strong>. Your main conversation stays small and cheap.</p>
+            </div>
+            <div class="card accent-g">
+                <h3>Don't grade your own homework</h3>
+                <p>Review with an agent that has not seen your reasoning. Give it the code and the spec, not your conclusion.</p>
+            </div>
+            <div class="card accent-v">
+                <h3>Real example</h3>
+                <p>Preparing these decks, a docs-checking agent caught <strong>three wrong commands</strong> on the slides before anyone saw them.</p>
+            </div>
         </div>
-        <div class="card accent-o reveal"><p><strong>Parallel work (advanced):</strong> one git worktree per independent task, so two agents never edit the same checkout. Clean them up when the task merges.</p></div>
+        <div class="card accent-o reveal">
+            <p><strong>Parallel work (advanced):</strong> one git worktree per independent task, so two agents never edit the same checkout. Clean them up when the task merges.</p>
+        </div>
     </div>
     <aside class="notes"><ul><li>The example is true: /usage, the double-Esc rewind condition and /mcp were corrected after a docs check.</li></ul></aside>
 </section>
@@ -676,14 +763,38 @@ fi</pre>
         <div class="eyebrow reveal">Day to day · everyone</div>
         <h2 class="reveal">Small habits, big difference</h2>
         <div class="cols-4 stagger">
-            <div class="card accent-g"><span class="tag">ask</span><p>"Ask me questions first." Interviews beat guesses.</p></div>
-            <div class="card accent-g"><span class="tag">answer first</span><p>Ask for the answer, then the reasoning. Short replies.</p></div>
-            <div class="card accent-g"><span class="tag">waiting on you</span><p>Open questions in a numbered block at the end, repeated until answered.</p></div>
-            <div class="card accent-b"><span class="tag b">point</span><p>Give file paths and the 10 relevant lines. Don't paste whole logs.</p></div>
-            <div class="card accent-b"><span class="tag b">/clear</span><p>New task, new context. Old chat is re-read, and paid for, every turn.</p></div>
-            <div class="card accent-b"><span class="tag b">models</span><p>Sonnet by default. Opus to plan, only when Sonnet isn't enough.</p></div>
-            <div class="card accent-o"><span class="tag o">offload</span><p>Before pulling a huge thread or doc into the chat, ask if a cheaper tool can summarize it.</p></div>
-            <div class="card accent-o"><span class="tag o">stop the loop</span><p>Third failed try? Interrupt, rethink, give a better hint.</p></div>
+            <div class="card accent-g">
+                <span class="tag">ask</span>
+                <p>"Ask me questions first." Interviews beat guesses.</p>
+            </div>
+            <div class="card accent-g">
+                <span class="tag">answer first</span>
+                <p>Ask for the answer, then the reasoning. Short replies.</p>
+            </div>
+            <div class="card accent-g">
+                <span class="tag">waiting on you</span>
+                <p>Open questions in a numbered block at the end, repeated until answered.</p>
+            </div>
+            <div class="card accent-b">
+                <span class="tag b">point</span>
+                <p>Give file paths and the 10 relevant lines. Don't paste whole logs.</p>
+            </div>
+            <div class="card accent-b">
+                <span class="tag b">/clear</span>
+                <p>New task, new context. Old chat is re-read, and paid for, every turn.</p>
+            </div>
+            <div class="card accent-b">
+                <span class="tag b">models</span>
+                <p>Sonnet by default. Opus to plan, only when Sonnet isn't enough.</p>
+            </div>
+            <div class="card accent-o">
+                <span class="tag o">offload</span>
+                <p>Before pulling a huge thread or doc into the chat, ask if a cheaper tool can summarize it.</p>
+            </div>
+            <div class="card accent-o">
+                <span class="tag o">stop the loop</span>
+                <p>Third failed try? Interrupt, rethink, give a better hint.</p>
+            </div>
         </div>
     </div>
     <aside class="notes"><ul><li>All of these are one-liners that can go straight into CLAUDE.md or a rules file.</li></ul></aside>
@@ -695,12 +806,18 @@ fi</pre>
         <div class="eyebrow reveal">Where to start</div>
         <h2 class="reveal">Pick your level, adopt two things</h2>
         <div class="cols-3 stagger">
-            <div class="card accent-g"><span class="tag">Everyone</span>
-                <ul class="checklist"><li><span class="box"></span><p>The evidence rule: "what did you run?"</p></li><li><span class="box"></span><p>A spec with checkable criteria</p></li><li><span class="box"></span><p>A journal per task</p></li><li><span class="box"></span><p>"Waiting on you" block</p></li></ul></div>
-            <div class="card accent-b"><span class="tag b">Intermediate</span>
-                <ul class="checklist"><li><span class="box"></span><p>A 10-line CLAUDE.md</p></li><li><span class="box"></span><p>One command, e.g. <code>/bug</code></p></li><li><span class="box"></span><p>Fresh-eyes review by a sub-agent</p></li><li><span class="box"></span><p>Name the hazards</p></li></ul></div>
-            <div class="card accent-v"><span class="tag v">Advanced</span>
-                <ul class="checklist"><li><span class="box"></span><p>A personal rules folder</p></li><li><span class="box"></span><p>One guard for your worst habit</p></li><li><span class="box"></span><p>Side agents for verbose work</p></li><li><span class="box"></span><p>Worktrees for parallel tasks</p></li></ul></div>
+            <div class="card accent-g">
+                <span class="tag">Everyone</span>
+                <ul class="checklist"><li><span class="box"></span><p>The evidence rule: "what did you run?"</p></li><li><span class="box"></span><p>A spec with checkable criteria</p></li><li><span class="box"></span><p>A journal per task</p></li><li><span class="box"></span><p>"Waiting on you" block</p></li></ul>
+            </div>
+            <div class="card accent-b">
+                <span class="tag b">Intermediate</span>
+                <ul class="checklist"><li><span class="box"></span><p>A 10-line CLAUDE.md</p></li><li><span class="box"></span><p>One command, e.g. <code>/bug</code></p></li><li><span class="box"></span><p>Fresh-eyes review by a sub-agent</p></li><li><span class="box"></span><p>Name the hazards</p></li></ul>
+            </div>
+            <div class="card accent-v">
+                <span class="tag v">Advanced</span>
+                <ul class="checklist"><li><span class="box"></span><p>A personal rules folder</p></li><li><span class="box"></span><p>One guard for your worst habit</p></li><li><span class="box"></span><p>Side agents for verbose work</p></li><li><span class="box"></span><p>Worktrees for parallel tasks</p></li></ul>
+            </div>
         </div>
     </div>
     <aside class="notes"><ul><li>Ask the room at the end: which two will you adopt this week?</li></ul></aside>
@@ -712,18 +829,11 @@ fi</pre>
     <div class="slide-content">
         <div class="eyebrow reveal">For the organizers</div>
         <h2 class="reveal" style="font-size:clamp(1.6rem,4.5vw,3.2rem)">Questions to settle together</h2>
-        <ul class="bullet-list stagger" style="max-width:70ch">
-            <li>Which of these go into a <strong>starter kit</strong> teams copy at the start of the build?</li>
-            <li>Which guards are safe to recommend to everyone, and which stay personal?</li>
-            <li>Do we keep a <strong>shared rules repo</strong> people can borrow from?</li>
-            <li>Where does this deck live: the general presentation, or the pit stop?</li>
-            <li>Who demos what, and with whose setup?</li>
-        </ul>
+        <ul class="bullet-list stagger" style="max-width:70ch"><li>Which of these go into a <strong>starter kit</strong> teams copy at the start of the build?</li><li>Which guards are safe to recommend to everyone, and which stay personal?</li><li>Do we keep a <strong>shared rules repo</strong> people can borrow from?</li><li>Where does this deck live: the general presentation, or the pit stop?</li><li>Who demos what, and with whose setup?</li></ul>
     </div>
     <div class="brand-mark"><svg viewBox="0 0 800 142" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dynatrace"><g id="Background"/><g id="Vertical"/><g id="Horizontal"/><g id="Dynatrace_Color"/><g id="Variants"><g><g><g><path d="M578.6 37.2 560.2 37.2C555 37.2 551.4 38.2 549.2 40.4 547 42.5 545.9 46.2 545.9 51.2L545.9 114.8 534.9 114.8 534.9 50.4C535 45.5 535.8 40.2 538.4 36.2 543.1 28.7 552.1 27.3 558.8 27.3L578.7 27.3 578.7 37.2Z" fill="currentColor"/></g><g><path d="M507.6 104.8C502.4 104.8 498.8 103.8 496.6 101.6 494.4 99.5 493.3 96 493.3 91L493.3 37.2 516.4 37.2 516.4 27.3 493.3 27.3 493.3 1 482.3 1 482.3 91.6C482.4 96.5 483.2 101.8 485.8 105.8 490.5 113.3 499.5 114.7 506.2 114.7L526.1 114.7 526.1 104.8 507.6 104.8Z" fill="currentColor"/></g><path d="M219.3 1 219.3 27.2 196.2 27.2C182.2 27.2 173.7 31.4 168.4 36.5 160.3 44.4 160.3 55.7 160.3 56.9 160.3 58.3 160.3 83.7 160.3 85.1 160.3 86.3 160.3 97.6 168.4 105.5 173.6 110.6 182.1 114.8 196.2 114.8L206.5 114.8C213.2 114.8 222.2 113.3 226.9 105.9 229.4 101.9 230.3 96.6 230.4 91.7L230.4 1 219.3 1ZM216 101.7C213.8 103.8 210.2 104.9 205 104.9L195 104.9C185.9 104.9 180.2 102.3 176.8 98.9 172.7 94.9 171.3 89.6 171.3 85.5L171.3 56.6C171.3 52.5 172.7 47.2 176.8 43.2 180.3 39.8 185.9 37.2 195 37.2L219.2 37.2 219.2 91.1C219.3 96 218.2 99.5 216 101.7Z" fill="currentColor"/><path d="M678.2 43.2C681.7 39.8 687.3 37.2 696.4 37.2L722.9 37.2 722.9 27.3 697.5 27.3C683.5 27.3 675 31.5 669.7 36.6 661.6 44.5 661.6 55.8 661.6 57 661.6 57.8 661.6 84.4 661.6 85.2 661.6 86.4 661.6 97.7 669.7 105.6 674.9 110.7 683.4 114.9 697.5 114.9L722.9 114.9 722.9 105 696.4 105C687.3 105 681.6 102.4 678.2 99 674.1 95 672.7 89.7 672.7 85.6L672.7 56.6C672.7 52.5 674.1 47.1 678.2 43.2Z" fill="currentColor"/><path d="M470.9 56.9C470.9 55.7 470.9 44.4 462.8 36.5 457.6 31.4 449.1 27.2 435 27.2L410.5 27.2 410.5 37.1 436.1 37.1C445.2 37.1 450.9 39.7 454.3 43.1 458.4 47.1 459.8 52.4 459.8 56.5L459.8 65 424.7 65C418 65 409 66.5 404.3 73.9 401.8 77.9 400.9 83.2 400.8 88.1L400.8 91.6C400.9 96.5 401.7 101.8 404.3 105.8 409 113.3 418 114.7 424.7 114.7L447 114.7C453.7 114.7 462.7 113.2 467.4 105.8 469.9 101.8 470.8 96.5 470.9 91.6 470.9 91.6 470.9 62.6 470.9 56.9ZM456.6 101.7C454.4 103.8 450.8 104.9 445.6 104.9L426.2 104.9C421 104.9 417.4 103.9 415.2 101.7 413 99.5 412 96 412 91.1L412 88.7C412 83.7 413.1 80.2 415.3 78.1 417.5 76 421.1 74.9 426.3 74.9L459.9 74.9 459.9 91.1C459.9 96 458.8 99.5 456.6 101.7Z" fill="currentColor"/><path d="M652.9 56.9C652.9 55.7 652.9 44.4 644.8 36.5 639.6 31.4 631.1 27.2 617 27.2L592.5 27.2 592.5 37.1 618.1 37.1C627.2 37.1 632.9 39.7 636.3 43.1 640.4 47.1 641.8 52.4 641.8 56.5L641.8 65 606.7 65C600 65 591 66.5 586.3 73.9 583.8 77.9 582.9 83.2 582.8 88.1L582.8 91.6C582.9 96.5 583.7 101.8 586.3 105.8 591 113.3 600 114.7 606.7 114.7L629 114.7C635.7 114.7 644.7 113.2 649.4 105.8 651.9 101.8 652.8 96.5 652.9 91.6 652.9 91.6 652.9 62.6 652.9 56.9ZM638.6 101.7C636.4 103.8 632.8 104.9 627.6 104.9L608.2 104.9C603 104.9 599.4 103.9 597.2 101.7 595 99.5 594 96 594 91.1L594 88.7C594 83.7 595.1 80.2 597.3 78.1 599.5 76 603.1 74.9 608.3 74.9L641.9 74.9 641.9 91.1C641.9 96 640.8 99.5 638.6 101.7Z" fill="currentColor"/><path d="M317.8 27.2 306.3 27.2 278.4 99.8 250.5 27.2 239.1 27.2 272.7 114.7 262.6 141 274.1 141Z" fill="currentColor"/><path d="M392.2 56.9C392.2 55.7 392.2 44.4 384.2 36.5 379.1 31.5 371 27.4 357.8 27.2L356.6 27.2C343.4 27.4 335.3 31.5 330.2 36.5 322.2 44.4 322.2 55.7 322.2 56.9 322.2 58.3 322.2 110.3 322.2 114.8L333.2 114.8 333.2 56.6C333.2 52.5 334.5 47.2 338.6 43.2 342 39.9 348.5 37.3 357.2 37.2 365.9 37.3 372.4 39.9 375.8 43.2 379.8 47.2 381.2 52.5 381.2 56.6L381.2 114.8 392.2 114.8C392.2 110.3 392.2 58.3 392.2 56.9Z" fill="currentColor"/><path d="M791 36.5C785.9 31.5 777.8 27.4 764.6 27.2L763.4 27.2C750.2 27.4 742.1 31.5 737 36.5 729 44.4 729 55.7 729 56.9L729 85.1C729 86.3 729 97.6 737 105.5 742.1 110.5 750.2 114.6 763.4 114.8L789.4 114.8 789.4 104.8 764 104.8C755.3 104.7 748.8 102.1 745.4 98.8 741.4 94.8 740 89.5 740 85.4L740 75.1 799 75.1 799 56.9C799.1 55.7 799.1 44.4 791 36.5ZM740.1 65.2 740.1 56.6C740.1 52.5 741.4 47.2 745.5 43.2 748.9 39.9 755.4 37.3 764.1 37.2 772.8 37.3 779.3 39.9 782.7 43.2 786.7 47.2 788.1 52.5 788.1 56.6L788.1 65.2 740.1 65.2Z" fill="currentColor"/></g><g><path d="M47.7 12.7C45.9 22.2 43.7 36.3 42.5 50.6 40.4 75.8 41.7 92.7 41.7 92.7L6.2 126.4C6.2 126.4 3.5 107.5 2.1 86.2 1.3 73 1 61.4 1 54.4 1 54 1.2 53.6 1.2 53.2 1.2 52.7 1.8 48 6.4 43.6 11.4 38.8 48.3 9.9 47.7 12.7Z" fill="#1966FF"/><path d="M47.7 12.7C45.9 22.2 43.7 36.3 42.5 50.6 42.5 50.6 3.2 45.9 1 55.4 1 54.9 1.7 49.1 6.3 44.7 11.3 39.9 48.3 9.9 47.7 12.7Z" fill="#1284EA"/><path d="M1 53.1C1 53.8 1 54.5 1 55.3 1.4 53.6 2.1 52.4 3.5 50.5 6.4 46.8 11.1 45.8 13 45.6 22.6 44.3 36.8 42.8 51.1 42.4 76.4 41.6 93.1 43.7 93.1 43.7L128.6 10C128.6 10 110 6.5 88.8 4 74.9 2.3 62.7 1.4 55.8 1 55.3 1 50.4 0.4 45.8 4.8 40.8 9.6 15.4 33.7 5.2 43.4 0.6 47.8 1 52.7 1 53.1Z" fill="#B4DC00"/><path d="M127.3 96.2C117.7 97.5 103.5 99.1 89.2 99.6 63.9 100.4 47.1 98.3 47.1 98.3L11.6 132.1C11.6 132.1 30.4 135.8 51.6 138.2 64.6 139.7 76.1 140.5 83.1 140.9 83.6 140.9 84.4 140.5 84.9 140.5 85.4 140.5 90.3 139.6 94.9 135.2 99.9 130.4 130.1 95.9 127.3 96.2Z" fill="#6F2DA8"/><path d="M127.3 96.2C117.7 97.5 103.5 99.1 89.2 99.6 89.2 99.6 91.9 139.1 82.4 140.8 82.9 140.8 89.4 140.5 94 136.1 99 131.3 130.1 95.9 127.3 96.2Z" fill="#591F91"/><path d="M84.5 141C83.8 141 83.1 140.9 82.3 140.9 84.1 140.6 85.3 140 87.2 138.6 91 135.9 92.2 131.2 92.6 129.3 94.3 119.8 96.6 105.7 97.7 91.4 99.7 66.2 98.5 49.4 98.5 49.4L134 15.6C134 15.6 136.6 34.4 138.1 55.7 139 69.6 139.3 81.9 139.4 88.7 139.4 89.2 139.8 94.1 135.2 98.5 130.2 103.3 104.8 127.5 94.7 137.2 89.9 141.6 85 141 84.5 141Z" fill="#49C2B3"/></g></g></g></svg></div>
     <aside class="notes"><ul><li>Capture the answers in the organizers' channel, then update this deck.</li></ul></aside>
 </section>
-
 </main>
 
 <script>
@@ -859,7 +969,6 @@ document.querySelectorAll('pre').forEach(pre => {
     });
     pre.appendChild(b);
 });
-
 new SlidePresentation();
 </script>
 </body>

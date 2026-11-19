@@ -1,0 +1,11 @@
+.agenda-bar { display: grid; grid-template-columns: 15fr 10fr 15fr 5fr 15fr 5fr 15fr 10fr 15fr 12fr 3fr; gap: 3px; height: clamp(8px, 1.4vh, 12px); margin: clamp(.6rem, 2vh, 1.4rem) 0; }
+.agenda-bar span, .agenda .dot { border-radius: 3px; background: var(--c); }
+.agenda { display: grid; grid-template-columns: auto auto 1fr; gap: clamp(.25rem, 1vh, .6rem) clamp(.8rem, 2vw, 1.6rem); align-items: center; }
+.agenda .t { font-family: var(--mono); font-size: var(--small-size); color: var(--text-3); display: flex; align-items: center; gap: .6em; }
+.agenda .dot { width: .7em; height: .7em; }
+.agenda .n { font-weight: 600; color: var(--text); font-size: clamp(.8rem, 1.3vw, 1.05rem); }
+.agenda .d { color: var(--text-2); font-size: clamp(.7rem, 1.05vw, .9rem); }
+.cp-num {
+    font-family: var(--font); font-weight: 100; line-height: .9;
+    font-size: clamp(3rem, 11vw, 8rem); color: var(--cp-color, var(--teal));
+}

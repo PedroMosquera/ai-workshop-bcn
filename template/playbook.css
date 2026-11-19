@@ -1,0 +1,33 @@
+/* === PLAYBOOK: layers, file list, hazards, copy buttons === */
+.layers { display: flex; flex-direction: column; gap: clamp(4px, .8vh, 8px); }
+.layer {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr) 9em; align-items: center; gap: clamp(.5rem, 1.5vw, 1.2rem);
+    background: var(--card); border: 1px solid var(--card-border); border-radius: 10px; box-shadow: var(--card-shadow);
+    padding: clamp(.35rem, 1vh, .65rem) clamp(.6rem, 1.4vw, 1rem);
+}
+.layer > code { font-size: clamp(.68rem, 1.05vw, .9rem); background: none; border: none; padding: 0; color: var(--text); }
+.layer > span:not(.tag) { font-size: clamp(.68rem, 1.05vw, .92rem); color: var(--text-2); }
+.layer > .tag { justify-self: end; }
+.layer .tag.g { background: rgba(73,194,179,.22); color: var(--teal-text); font-weight: 500; }
+.filelist { list-style: none; display: flex; flex-direction: column; gap: clamp(.35rem, 1vh, .7rem); }
+.filelist li { display: flex; flex-direction: column; gap: .1em; border-left: 2px solid var(--card-border); padding-left: .8em; }
+.filelist code { font-size: clamp(.7rem, 1.05vw, .9rem); background: none; border: none; padding: 0; color: var(--teal-text); }
+.filelist span { font-size: clamp(.68rem, 1.05vw, .9rem); color: var(--text-2); }
+.hazards { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(4px, .8vw, 8px); }
+.hz { background: var(--card); border: 1px solid var(--card-border); border-radius: 8px; padding: clamp(.35rem, .9vh, .6rem) .8rem; display: flex; flex-direction: column; box-shadow: var(--card-shadow); }
+.hz strong { font-size: clamp(.72rem, 1.1vw, .95rem); }
+.hz span { font-size: clamp(.62rem, .95vw, .8rem); color: var(--text-3); }
+@media (max-width: 800px) { .hazards { grid-template-columns: 1fr 1fr; } .layer { grid-template-columns: 1fr; } }
+pre { position: relative; }
+.copy-btn {
+    position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; border-radius: 6px; cursor: pointer;
+    border: 1px solid #2E3A56; background: #1A2440; color: #B0B5BD; display: grid; place-items: center; opacity: .6; padding: 0;
+}
+.copy-btn:hover { opacity: 1; }
+.copy-btn svg { width: 14px; height: 14px; }
+.copy-btn .i-ok { display: none; color: #49C2B3; }
+.copy-btn.copied .i-ok { display: block; } .copy-btn.copied .i-copy { display: none; }
+.cp-num {
+    font-family: var(--mono); font-weight: 500; line-height: .9;
+    font-size: clamp(3rem, 11vw, 8rem); color: transparent; -webkit-text-stroke: 1.5px var(--cp-color, var(--teal));
+}

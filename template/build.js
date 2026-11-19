@@ -1,10 +1,10 @@
 /* === STATUS BOARD: state lives in this browser's localStorage only === */
 class StatusBoard {
     static TEAMS = 5;
-    static CHECKPOINTS = 5;
+    static CHECKPOINTS = 4;
     static STATES = ['todo', 'wip', 'done', 'help'];
     static LABELS = { todo: '-', wip: 'in progress', done: 'done', help: 'need help' };
-    static KEY = 'ws-board-v1';
+    static KEY = 'ws-board-v2';
 
     constructor() {
         this.body = document.getElementById('boardBody');

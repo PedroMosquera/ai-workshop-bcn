@@ -80,6 +80,8 @@ body { min-height: 100%; }
 .slide-content {
     flex: 1; display: flex; flex-direction: column; justify-content: center;
     max-height: 100%; overflow: hidden; padding: var(--slide-padding);
+    /* Optical centre: sit a little above the middle, which reads as centred */
+    transform: translateY(-4vh);
 }
 :root {
     --title-size: clamp(1.5rem, 5vw, 4rem);
@@ -91,7 +93,9 @@ body { min-height: 100%; }
     --content-gap: clamp(0.5rem, 2vw, 2rem);
     --element-gap: clamp(0.25rem, 1vw, 1rem);
 }
-.card, .container, .content-box { max-width: min(90vw, 1000px); max-height: min(80vh, 700px); }
+/* Above about a 1230x670 window every rem size grows with the window, limited by its height so slides don't overflow */
+html { font-size: max(100%, min(1.3vw, 2.4vh)); }
+.card, .container, .content-box { max-width: min(90vw, 62.5rem); max-height: min(80vh, 43.75rem); }
 .feature-list, .bullet-list { gap: clamp(0.4rem, 1vh, 1rem); }
 .feature-list li, .bullet-list li { font-size: var(--body-size); line-height: 1.4; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: clamp(0.5rem, 1.5vw, 1rem); }
@@ -127,7 +131,7 @@ body {
     background-size: 48px 48px;
     mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%);
 }
-.slide-content { position: relative; z-index: 1; gap: var(--content-gap); max-width: 1280px; width: 100%; margin: 0 auto; }
+.slide-content { position: relative; z-index: 1; gap: var(--content-gap); max-width: 80rem; width: 100%; margin: 0 auto; }
 
 h1 { font-size: var(--title-size); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; }
 h2 { font-size: var(--h2-size); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; }
@@ -199,7 +203,7 @@ pre .k { color: #49C2B3; } pre .s { color: #3BACF0; } pre .w { color: #D979E6; }
 .meta-row .tag { font-size: clamp(.65rem, 1vw, .85rem); }
 
 /* === CHECKPOINT TIMELINE === */
-.cp-track { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.cp-track { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
 .cp-step { display: flex; flex-direction: column; gap: .45em; }
 .cp-step .bar { height: 6px; border-radius: 3px; background: var(--teal); }
 .cp-step:nth-child(2) .bar { background: var(--blue); }

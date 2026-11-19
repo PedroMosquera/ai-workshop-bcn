@@ -79,7 +79,7 @@ Files are **remembered** and can be ignored. Guards are **enforced**. Important 
 :::
 
 Notes:
-- If the audience keeps one slide, it is this one. Principles 01 and 02 are the CP4 message of the build deck.
+- If the audience keeps one slide, it is this one. Principles 01 and 02 are the CP3 message of the build deck.
 
 <!-- 03 LAYERS -->
 === slide

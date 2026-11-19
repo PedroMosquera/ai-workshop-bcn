@@ -37,11 +37,11 @@ In order inside `template/deck.html`, the page every deck is built on:
 
 1. `FONTS`: DTFlow `@font-face` rules, inlined from `template/assets/` as base64 at build time (weights 100, 300, 500, 600, 700). Do not touch.
 2. `THEME TOKENS`: every colour, as CSS variables on `:root` (dark) and `[data-theme="light"]`. The only place colours are defined.
-3. `VIEWPORT BASE`: from the skill's `viewport-base.css`. Slides are exactly one screen tall; sizes use `clamp()`.
+3. `VIEWPORT BASE`: from the skill's `viewport-base.css`. Slides are exactly one screen tall; sizes use `clamp()` and `rem`, and the root font size grows with the window on large screens.
 4. Component CSS (`BASE`, `TITLE`, `CHECKPOINT`, `STATUS BOARD`, `BRAND CHROME`, ...). CSS only one deck uses lives in `template/<deck>.css`.
 5. Slides: built from `decks/*.md` into `<section class="slide">` > `<div class="slide-content">` plus `<aside class="notes">` for speaker notes (`Notes:` in the markdown).
 6. `PRESENTATION CONTROLLER`: keyboard, nav dots, pager, theme toggle, notes panel, `?slide=N`.
-7. `build.html` only: `STATUS BOARD` in `template/build.js` and `template/board.html` (5 teams x 5 checkpoints, saved in the presenting browser's localStorage).
+7. `build.html` only: `STATUS BOARD` in `template/build.js` and `template/board.html` (5 teams x 4 checkpoints, saved in the presenting browser's localStorage).
 
 ## Style rules
 

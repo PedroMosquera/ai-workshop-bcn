@@ -11,40 +11,38 @@ extras: build
 
 # The ==parking== app.
 
-> Every team leaves today with a working parking booking app on a laptop. Any stack, any tool. Five checkpoints get us there together.
+> Every team leaves today with a working parking booking app on a laptop. Any stack, any tool. Four checkpoints get us there together.
 
 ::: meta-row reveal
-[[5 checkpoints]] [[b: 17:00 to 19:00, food included]] [[v: 4-5 teams]] [[o: runs locally]]
+[[4 checkpoints]] [[b: 17:00 to 19:00, food included]] [[v: 4-5 teams]] [[o: runs locally]]
 :::
 
 Notes:
 - This deck starts after the general presentation. It only covers the build.
-- Clock times assume the general intro runs 17:00 to 17:15 while people grab food. If it runs long, every time after it shifts by the same amount.
+- Clock times assume the general intro runs 17:00 to 17:05 while people grab food. If it runs long, every time after it shifts by the same amount.
 
 <!-- 02 THE EVENING -->
 === slide
 
 ^ Thursday · 17:00 to 19:00
 
-## Four sprints, a checkpoint after each
+## Three sprints, a checkpoint after each
 
 ::: agenda reveal
 - [text-3] 17:00 | Welcome, food and drinks | General intro while people grab pizza
-- [blue] 17:15 | Build brief | Mission, ask the room, scope, form 4-5 teams
-- [teal] 17:25 | Sprint 1 | Spec and plan, no code yet
-- [purple] 17:40 | CP1 · spec & plan | Board call, spotlight team, catch-up
-- [teal] 17:45 | Sprint 2 | Get it running
-- [purple] 18:00 | CP2 · it runs | Board call, spotlight team, catch-up
-- [teal] 18:05 | Sprint 3 | Book, release, keep
-- [pink] 18:20 | CP3 · pit stop | Spotlight, lessons so far, food refill
-- [teal] 18:30 | Sprint 4 | Rules hold, get demo-ready
-- [blue] 18:45 | Demos · CP4 and CP5 | Every team, 2 minutes
+- [blue] 17:05 | Build brief | Mission, ask the room, scope, form 4-5 teams
+- [teal] 17:15 | Sprint 1 | Spec and plan, no code yet
+- [purple] 17:35 | Check Point 1 · spec & plan | Board call, spotlight team, catch-up
+- [teal] 17:45 | Sprint 2 | Get it running: book, release, keep
+- [pink] 18:10 | Check Point 2 · pit stop | Spotlight, lessons so far, food refill
+- [teal] 18:20 | Sprint 3 | Rules hold, get demo-ready
+- [blue] 18:45 | Demos · Last Check Points | Every team
 - [text-3] 18:57 | Close | What happens next
 :::
 
 Notes:
 - Food stays out the whole time. People eat during the intro and refill at the pit stop, so there is no separate meal break.
-- Building time is 4 sprints of 15 minutes. If the intro overruns, shorten demos to 90 seconds, not a sprint.
+- Building time is 3 sprints: 20, 25 and 25 minutes. If the intro overruns, shorten demos to 90 seconds, not a sprint.
 
 <!-- 02 THE MISSION -->
 === slide
@@ -274,47 +272,46 @@ Notes:
 <!-- 08 CHECKPOINT OVERVIEW -->
 === slide
 
-^ Five checkpoints
+^ Four checkpoints
 
 ## Same finish line, your own route
 
 ::: cp-track stagger
-- CP1 · 17:40 | Spec & plan | spec.md written, stack chosen, plan agreed with the AI
-- CP2 · 18:00 | It runs | App starts on a laptop and shows the spots for a date
-- CP3 · 18:20 | Booking works | Book and release a spot; data survives a refresh
-- [dashed] Pit stop · 18:20 | What we learned | CP3 spotlight, lessons so far, tips, food refill
-- [pink] CP4 · 18:45 | Rules hold | Double booking, past dates and duplicates are refused
-- [teal] CP5 · 18:45 | Demo-ready | Run command and journal ready, checked as you step up to demo
+- CP1 · 17:35 | Spec & plan | spec.md written, stack chosen, plan agreed with the AI
+- CP2 · 18:10 | It runs, booking works | App starts on a laptop; book and release a spot; data survives a refresh
+- [dashed] Pit stop · 18:10 | What we learned | CP2 spotlight, lessons so far, tips, food refill
+- [pink] CP3 · 18:45 | Rules hold | Double booking, past dates and duplicates are refused
+- [teal] CP4 · 18:45 | Demo-ready | Run command and journal ready, checked as you step up to demo
 :::
 
 ::: cols-2 stagger
 ::: card accent-g
 ### Every team covers every checkpoint
 
-How you get there is up to you. A spreadsheet that refuses a double booking passes CP4 as much as a React app does.
+How you get there is up to you. A spreadsheet that refuses a double booking passes CP3 as much as a React app does.
 :::
 
 ::: card accent-b
-### After each sprint: 5 minutes
+### CP1 and CP2: 10 minutes each
 
-Hands off keyboards. A board call, one team in the spotlight, then catch-up for anyone behind. CP4 and CP5 are shown in the demos.
+Hands off keyboards. A board call, one team in the spotlight, then catch-up for anyone behind. CP3 and CP4 are shown in the demos.
 :::
 :::
 
 Notes:
-- Build starts 17:25. If the intro overruns, shift every checkpoint by the same amount rather than cutting the pit stop.
+- Build starts 17:15. If the intro overruns, shift every checkpoint by the same amount rather than cutting the pit stop.
 - Do not wait for every team before moving on. The board shows who is behind; organizers go to them.
 
 <!-- HOW A CHECKPOINT RUNS -->
 === slide
 
-^ Every checkpoint · 5 minutes, hands off keyboards
+^ Every checkpoint · 10 minutes, hands off keyboards
 
 ## Show, borrow, catch up
 
 ::: cols-3 stagger
 ::: card accent-g
-[[1' · board call]]
+[[2' · board call]]
 
 ### Where is everyone?
 
@@ -322,7 +319,7 @@ Each team calls **done**, **in progress** or **need help**. We mark the status b
 :::
 
 ::: card accent-b
-[[b: 3' · spotlight]]
+[[b: 6' · spotlight]]
 
 ### One team shows how
 
@@ -330,7 +327,7 @@ Not a polished demo: the route. The prompt, tool or move that got them here, and
 :::
 
 ::: card accent-v
-[[v: 1' · catch-up]]
+[[v: 2' · catch-up]]
 
 ### Behind? Say why
 
@@ -340,12 +337,12 @@ One sentence on what blocked you. The room or an organizer gives you one move to
 
 > Copying is allowed. If the spotlight team's spec, stack or prompt works, use it.
 
-~ Spotlights at CP1, CP2 and the CP3 pit stop. Teams that have not had one open the demos.
+~ Spotlights at CP1 and the CP2 pit stop. Teams that have not had one open the demos.
 
 Notes:
-- Pick the spotlight team from the board: ahead, and not shown yet. With 5 teams, 3 get a spotlight and 2 open the demos. With 4 teams, 3 and 1.
-- The catch-up minute is for teams marked need help. An organizer sits with them for the first 5 minutes of the next sprint.
-- Hold the 5 minutes. Cut questions, not the next sprint.
+- Pick the spotlight team from the board: ahead, and not shown yet. With 5 teams, 2 get a spotlight and 3 open the demos. With 4 teams, 2 and 2.
+- The catch-up minutes are for teams marked need help. An organizer sits with them for the first 5 minutes of the next sprint.
+- Hold the 10 minutes. Cut questions, not the next sprint.
 
 <!-- 09 CP1 -->
 === slide style="--cp-color: var(--teal)"
@@ -355,7 +352,7 @@ Notes:
 !! CP1
 
 ::: cp-meta
-[[17:40]] [[Spec & plan]]
+[[17:35]] [[Spec & plan]]
 :::
 
 ## We know what we are building
@@ -388,7 +385,7 @@ Borrow the spotlight team's spec layout. Then: "Read spec.md and ask me up to 5 
 :::
 
 Notes:
-- Teams that start coding before CP1 usually come back to it at CP3. Hold the line.
+- Teams that start coding before CP1 usually come back to it at CP2. Hold the line.
 
 <!-- 10 CP2 -->
 === slide style="--cp-color: var(--blue)"
@@ -398,88 +395,47 @@ Notes:
 !! CP2
 
 ::: cp-meta
-[[b: 18:00]] [[b: It runs]]
+[[b: 18:10]] [[b: It runs, booking works]]
 :::
 
-## Something is alive on a laptop
+## Book it, release it, keep it
 
-> The thinnest possible slice: start it, see the spots. Hard-coded data is fine.
+> The core loop works end to end on a laptop, and nothing is lost when the app reloads.
 :::
 
 ::: cp-right stagger
 ::: card accent-b
 ### Must show
 
-- [ ] The app starts with one command (or one click)
-- [ ] It lists the seeded spots, about 10, with fake data
-- [ ] You can pick a date and see each spot as free or taken
-- [ ] First commit (or a saved copy) done
-:::
-
-::: card
-### How we check
-
-Driver starts it from scratch while an organizer watches. No "it worked a minute ago".
-:::
-
-::: card accent-o
-### Behind?
-
-Take the stack the spotlight team got running, or the simplest one: one file, hard-coded spots, no framework.
-:::
-:::
-:::
-
-Notes:
-- Most common blocker here is environment setup. Steer stuck teams to the simplest stack they already have installed.
-
-<!-- 11 CP3 -->
-=== slide style="--cp-color: var(--purple)"
-
-::: cp-layout
-::: cp-left reveal
-!! CP3
-
-::: cp-meta
-[[v: 18:20]] [[v: Booking works]]
-:::
-
-## Book it, release it, keep it
-
-> The core loop works end to end, and nothing is lost when the app reloads.
-:::
-
-::: cp-right stagger
-::: card accent-v
-### Must show
-
-- [ ] Book a spot for a date under a fake name; it shows as taken
-- [ ] Release that booking; the spot is free again
+- [ ] The app starts with one command (or one click) and lists about 10 seeded spots, fake data
+- [ ] Pick a date: each spot shows as free or taken
+- [ ] Book a spot under a fake name; it shows as taken. Release it; it is free again
 - [ ] Refresh or restart: the booking is still there
-- [ ] Committed
+- [ ] Committed (or a saved copy)
 :::
 
 ::: card
 ### How we check
 
-Breaker books spot 3 for tomorrow, restarts the app, shows it is still booked, then releases it.
+Driver starts it from scratch while an organizer watches. Breaker books spot 3 for tomorrow, restarts the app, shows it is still booked, then releases it.
 :::
 
 ::: card accent-o
 ### Behind?
 
-Cut to book and persist only. A JSON file, SQLite, browser storage or a sheet: whichever your stack makes easiest.
+Take the simplest stack that runs: one file, hard-coded spots, no framework. Then cut to book and persist only: a JSON file, SQLite, browser storage or a sheet.
 :::
 :::
 :::
 
 Notes:
-- This is the checkpoint most teams should reach no matter what. If a team is far behind at 18:20, help them cut to just book + persist.
+- This is the checkpoint most teams should reach no matter what. If a team is far behind at 18:10, help them cut to just book + persist.
+- Most common blocker on the way is environment setup. Steer stuck teams to the simplest stack they already have installed.
 
 <!-- PIT STOP -->
 === slide style="--cp-color: var(--text-3)"
 
-^ CP3 + pit stop · 18:20 · 10 minutes
+^ CP2 + pit stop · 18:10 · 10 minutes
 
 ## Hands off keyboards. What have we learned?
 
@@ -500,7 +456,7 @@ Notes:
 
 ### One ahead, one stuck
 
-The CP3 spotlight team (2 min), then the team furthest behind (1 min), plus a minute of questions:
+The CP2 spotlight team (2 min), then the team furthest behind (1 min), plus a minute of questions:
 
 - The prompt that moved you forward
 - Where the AI went wrong
@@ -519,11 +475,11 @@ Best prompt so far, usage so far, one thing you would do differently. Memories f
 :::
 
 Notes:
-- The spotlight goes to the third team to show. The stuck team's minute is the most useful story in the room: protect it.
+- The spotlight goes to the second team to show. The stuck team's minute is the most useful story in the room: protect it.
 - Mark the board from the tables while people refill. No separate board call here.
 - Count the hands out loud and write the numbers in the shared notes; they feed the session 2 summary.
 - Keep it to 10 minutes. It doubles as the food and drink refill, so say so: hands off keyboards, grab a slice, listen.
-- CP4 needs the time. Sprint 4 starts at 18:30 sharp.
+- CP3 needs the time. Sprint 3 starts at 18:20 sharp.
 
 <!-- PIT STOP TIPS -->
 === slide
@@ -566,18 +522,18 @@ Repeating yourself? Put it in `CLAUDE.md`: run the app after each change, no new
 :::
 :::
 
-> All four point at CP4: prove it works, do not take the AI's word for it.
+> All four point at CP3: prove it works, do not take the AI's word for it.
 
 Notes:
 - Tip 01 is a true story from preparing this session. Tell it in 30 seconds.
 - Swap a tip for something you saw at the tables if it is more relevant.
 
-<!-- 12 CP4 -->
+<!-- 12 CP3 -->
 === slide style="--cp-color: var(--pink)"
 
 ::: cp-layout
 ::: cp-left reveal
-!! CP4
+!! CP3
 
 ::: cp-meta
 [[o: 18:45]] [[o: Rules hold]]
@@ -613,14 +569,14 @@ Paste the acceptance criteria and ask the AI to check each one against the code 
 :::
 
 Notes:
-- Ask the AI "what did you run to verify that?" Teams that get a claim without output should not mark CP4 done.
+- Ask the AI "what did you run to verify that?" Teams that get a claim without output should not mark CP3 done.
 
-<!-- 13 CP5 -->
+<!-- 13 CP4 -->
 === slide style="--cp-color: var(--teal)"
 
 ::: cp-layout
 ::: cp-left reveal
-!! CP5
+!! CP4
 
 ::: cp-meta
 [[18:45]] [[Demo-ready]]
@@ -693,12 +649,12 @@ Notes:
 :::
 
 Notes:
-- Start the journal at 17:25, not at the end. Usage "before" must be noted before the first prompt.
+- Start the journal at 17:15, not at the end. Usage "before" must be noted before the first prompt.
 
 <!-- 16 DEMOS -->
 === slide
 
-^ 18:45 · demos · CP4 and CP5
+^ 18:45 · demos · CP3 and CP4
 
 ## Two minutes per team
 
@@ -732,7 +688,7 @@ Your last checkpoint passed, and the time it took. Usage spent, if you measured 
 
 Notes:
 - 4-5 teams at 2 minutes is 8 to 10 minutes, 18:45 to about 18:57. Strict timer. Teams that had no spotlight go first.
-- The demo is where CP4 (a refused double booking) and CP5 (run command, journal) are checked.
+- The demo is where CP3 (a refused double booking) and CP4 (run command, journal) are checked.
 
 <!-- 17 NEXT SESSIONS -->
 === slide
@@ -775,11 +731,11 @@ Notes:
 <!-- 18 CLOSE -->
 === slide .title-slide .bg-img .bg-closing
 
-^ 17:25 · build starts now
+^ 17:15 · build starts now
 
 # Go ==build==.
 
-> CP1 at 17:40: spec and plan, no code. Then the first spotlight.
+> CP1 at 17:35: spec and plan, no code. Then the first spotlight.
 
 Notes:
 - Start the timer. Leave the checkpoint overview or the status board on screen during the build.

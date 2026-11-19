@@ -76,6 +76,23 @@ Give the spot back when plans change, so someone else can use it.
 Notes:
 - Three verbs. Every checkpoint maps to them.
 
+<!-- OUR PARKING -->
+=== slide
+
+^ Where we park
+
+## Level -3, shared with other companies
+
+::: photos stagger
+![Numbered bays, some with EV chargers](photos/garage-bays.webp)
+![Motorbikes take car bays](photos/motorbikes.webp)
+![Who gets which bay?](photos/level-3.webp)
+:::
+
+Notes:
+- Our real parking, photographed for today. Number plates are blurred.
+- Ask people to look for what the rules must cover: bay numbers, chargers, motorbikes, other companies' bays. The next slide asks the room.
+
 <!-- 03 ASK THE ROOM -->
 === slide
 

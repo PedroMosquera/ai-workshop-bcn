@@ -168,6 +168,21 @@ class SlideMarkdown(unittest.TestCase):
         self.assertTrue(html.endswith(
             '</div><aside class="notes"><ul><li>First <strong>note</strong></li><li>Second</li></ul></aside></section>'))
 
+    def test_photo_is_embedded_with_its_caption(self):
+        self.assertRenders(
+            "::: photos\n![Motorbikes take car bays](photos/bikes.webp)\n:::",
+            '<div class="photos"><figure class="photo">'
+            '<img src="data:image/webp;base64,{{base64:assets/photos/bikes.webp}}" alt="Motorbikes take car bays">'
+            '<figcaption>Motorbikes take car bays</figcaption></figure></div>',
+        )
+
+    def test_photo_at_top_level_reveals(self):
+        self.assertRenders(
+            "![Level -3](photos/level.jpg)",
+            '<figure class="photo reveal"><img src="data:image/jpeg;base64,{{base64:assets/photos/level.jpg}}" '
+            'alt="Level -3"><figcaption>Level -3</figcaption></figure>',
+        )
+
     def test_comments_between_slides_are_kept(self):
         html = render_slides("<!-- 01 TITLE -->\n=== slide\n\n## A\n\n<!-- 02 NEXT -->\n=== slide\n\n## B\n")
         self.assertEqual(html.count("<section"), 2)

@@ -117,7 +117,15 @@ def code_line(line):
 
 TAG = re.compile(r"\[\[(?:([a-z]): )?(.+?)\]\]")
 TAGS_ONLY = re.compile(r"^(\s*\[\[.+?\]\])+\s*$")
-BLOCK_START = re.compile(r"^(\^ |#{1,3} |> |~ |- |:::|```|!! |@|<|\{.*\}$|\[\[)")
+BLOCK_START = re.compile(r"^(\^ |#{1,3} |> |~ |- |:::|```|!! |!\[|@|<|\{.*\}$|\[\[)")
+PHOTO = re.compile(r"!\[(.+?)\]\((.+?)\)")
+IMAGE_TYPES = {".webp": "webp", ".jpg": "jpeg", ".jpeg": "jpeg", ".png": "png"}
+
+
+def photo(caption, src):
+    """A photo from template/assets/, inlined at build time like the fonts, with its caption below."""
+    data = f"data:image/{IMAGE_TYPES[Path(src).suffix.lower()]};base64,{{{{base64:assets/{src}}}}}"
+    return f'<img src="{data}" alt="{html.escape(caption)}"><figcaption>{inline(caption)}</figcaption>'
 
 
 def tags(line):
@@ -281,6 +289,10 @@ def render_blocks(lines, top, indent):
         if text.startswith("!! "):
             emit(element("span", ["cp-num"], False, inline(text[3:]), attrs))
             continue
+        m = PHOTO.fullmatch(text)
+        if m:
+            emit(element("figure", ["photo"], top, photo(*m.groups()), attrs))
+            continue
         for prefix, tag, base in (("^ ", "div", ["eyebrow"]), ("### ", "h3", []), ("## ", "h2", []),
                                   ("# ", "h1", []), ("> ", "p", ["lede"]), ("~ ", "p", ["small"])):
             if text.startswith(prefix):
@@ -357,12 +369,12 @@ def build_deck(source):
     deck_css = (TEMPLATE / f"{extras}.css").read_text().rstrip("\n") if extras else ""
     deck_js = (TEMPLATE / f"{extras}.js").read_text().rstrip("\n") if extras else ""
     page = (TEMPLATE / "deck.html").read_text()
-    page = re.sub(r"\{\{base64:([^}]+)\}\}",
-                  lambda m: base64.b64encode((TEMPLATE / m.group(1)).read_bytes()).decode(), page)
     for key, value in (("title", meta["title"]), ("deck_css", deck_css), ("deck_js", deck_js),
                        ("slides", render_slides(body).rstrip("\n"))):
         page = page.replace("{{%s}}" % key, value)
-    return page
+    # after the slides go in, so their photos are inlined too
+    return re.sub(r"\{\{base64:([^}]+)\}\}",
+                  lambda m: base64.b64encode((TEMPLATE / m.group(1)).read_bytes()).decode(), page)
 
 
 def main(paths):

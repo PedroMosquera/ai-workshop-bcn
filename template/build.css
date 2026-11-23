@@ -9,3 +9,5 @@
     font-family: var(--font); font-weight: 100; line-height: .9;
     font-size: clamp(3rem, 11vw, 8rem); color: var(--cp-color, var(--teal));
 }
+.photo.logo img { aspect-ratio: auto; max-height: 34vh; object-fit: contain; padding: clamp(1rem, 3vw, 2.4rem); background: var(--code-bg); }
+.slide-content a { color: var(--blue-text); text-underline-offset: .2em; }

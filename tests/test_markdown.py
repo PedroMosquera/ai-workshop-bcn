@@ -183,6 +183,13 @@ class SlideMarkdown(unittest.TestCase):
             'alt="Level -3"><figcaption>Level -3</figcaption></figure>',
         )
 
+    def test_svg_logo_is_embedded(self):
+        self.assertRenders(
+            "![Bluebox](photos/bluebox.svg) {.logo}",
+            '<figure class="photo logo reveal"><img src="data:image/svg+xml;base64,{{base64:assets/photos/bluebox.svg}}" '
+            'alt="Bluebox"><figcaption>Bluebox</figcaption></figure>',
+        )
+
     def test_comments_between_slides_are_kept(self):
         html = render_slides("<!-- 01 TITLE -->\n=== slide\n\n## A\n\n<!-- 02 NEXT -->\n=== slide\n\n## B\n")
         self.assertEqual(html.count("<section"), 2)

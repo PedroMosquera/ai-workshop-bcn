@@ -212,7 +212,7 @@ pre .k { color: #49C2B3; } pre .s { color: #3BACF0; } pre .w { color: #D979E6; }
 .meta-row .tag { font-size: clamp(.65rem, 1vw, .85rem); }
 
 /* === CHECKPOINT TIMELINE === */
-.cp-track { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.cp-track { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .cp-step { display: flex; flex-direction: column; gap: .45em; }
 .cp-step .bar { height: 6px; border-radius: 3px; background: var(--teal); }
 .cp-step:nth-child(2) .bar { background: var(--blue); }
@@ -278,6 +278,8 @@ pre .k { color: #49C2B3; } pre .s { color: #3BACF0; } pre .w { color: #D979E6; }
     font-family: var(--font); font-weight: 100; line-height: .9;
     font-size: clamp(3rem, 11vw, 8rem); color: var(--cp-color, var(--teal));
 }
+.photo.logo img { aspect-ratio: auto; max-height: 34vh; object-fit: contain; padding: clamp(1rem, 3vw, 2.4rem); background: var(--code-bg); }
+.slide-content a { color: var(--blue-text); text-underline-offset: .2em; }
 .bg-overlay { display: none; position: absolute; inset: 0; background: rgba(26,36,64,var(--bg-overlay-opacity,.55)); z-index: 0; pointer-events: none; }
 [data-theme="dark"] .slide.bg-img { background-size: cover; background-position: center; background-attachment: fixed; }
 [data-theme="dark"] .slide.bg-img::before { display: none; }
@@ -384,9 +386,9 @@ aside.notes { display: none; }
     <div class="slide-content">
         <div class="eyebrow reveal">Build brief · Session 1</div>
         <h1 class="reveal">The <span class="g">parking</span> app.</h1>
-        <p class="lede reveal">Every team leaves today with a working parking booking app on a laptop. Any stack, any tool. Four checkpoints get us there together.</p>
+        <p class="lede reveal">Every team leaves today with a working parking booking app on a laptop. Any stack, any tool. Two checkpoints and a final one get us there together.</p>
         <div class="meta-row reveal">
-            <span class="tag">4 checkpoints</span><span class="tag b">17:00 to 19:00, food included</span><span class="tag v">4-5 teams</span><span class="tag o">runs locally</span>
+            <span class="tag">3 checkpoints</span><span class="tag b">17:00 to 19:00, food included</span><span class="tag v">4-5 teams</span><span class="tag o">runs locally</span>
         </div>
     </div>
     <div class="brand-mark"><svg viewBox="0 0 800 142" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dynatrace"><g id="Background"/><g id="Vertical"/><g id="Horizontal"/><g id="Dynatrace_Color"/><g id="Variants"><g><g><g><path d="M578.6 37.2 560.2 37.2C555 37.2 551.4 38.2 549.2 40.4 547 42.5 545.9 46.2 545.9 51.2L545.9 114.8 534.9 114.8 534.9 50.4C535 45.5 535.8 40.2 538.4 36.2 543.1 28.7 552.1 27.3 558.8 27.3L578.7 27.3 578.7 37.2Z" fill="currentColor"/></g><g><path d="M507.6 104.8C502.4 104.8 498.8 103.8 496.6 101.6 494.4 99.5 493.3 96 493.3 91L493.3 37.2 516.4 37.2 516.4 27.3 493.3 27.3 493.3 1 482.3 1 482.3 91.6C482.4 96.5 483.2 101.8 485.8 105.8 490.5 113.3 499.5 114.7 506.2 114.7L526.1 114.7 526.1 104.8 507.6 104.8Z" fill="currentColor"/></g><path d="M219.3 1 219.3 27.2 196.2 27.2C182.2 27.2 173.7 31.4 168.4 36.5 160.3 44.4 160.3 55.7 160.3 56.9 160.3 58.3 160.3 83.7 160.3 85.1 160.3 86.3 160.3 97.6 168.4 105.5 173.6 110.6 182.1 114.8 196.2 114.8L206.5 114.8C213.2 114.8 222.2 113.3 226.9 105.9 229.4 101.9 230.3 96.6 230.4 91.7L230.4 1 219.3 1ZM216 101.7C213.8 103.8 210.2 104.9 205 104.9L195 104.9C185.9 104.9 180.2 102.3 176.8 98.9 172.7 94.9 171.3 89.6 171.3 85.5L171.3 56.6C171.3 52.5 172.7 47.2 176.8 43.2 180.3 39.8 185.9 37.2 195 37.2L219.2 37.2 219.2 91.1C219.3 96 218.2 99.5 216 101.7Z" fill="currentColor"/><path d="M678.2 43.2C681.7 39.8 687.3 37.2 696.4 37.2L722.9 37.2 722.9 27.3 697.5 27.3C683.5 27.3 675 31.5 669.7 36.6 661.6 44.5 661.6 55.8 661.6 57 661.6 57.8 661.6 84.4 661.6 85.2 661.6 86.4 661.6 97.7 669.7 105.6 674.9 110.7 683.4 114.9 697.5 114.9L722.9 114.9 722.9 105 696.4 105C687.3 105 681.6 102.4 678.2 99 674.1 95 672.7 89.7 672.7 85.6L672.7 56.6C672.7 52.5 674.1 47.1 678.2 43.2Z" fill="currentColor"/><path d="M470.9 56.9C470.9 55.7 470.9 44.4 462.8 36.5 457.6 31.4 449.1 27.2 435 27.2L410.5 27.2 410.5 37.1 436.1 37.1C445.2 37.1 450.9 39.7 454.3 43.1 458.4 47.1 459.8 52.4 459.8 56.5L459.8 65 424.7 65C418 65 409 66.5 404.3 73.9 401.8 77.9 400.9 83.2 400.8 88.1L400.8 91.6C400.9 96.5 401.7 101.8 404.3 105.8 409 113.3 418 114.7 424.7 114.7L447 114.7C453.7 114.7 462.7 113.2 467.4 105.8 469.9 101.8 470.8 96.5 470.9 91.6 470.9 91.6 470.9 62.6 470.9 56.9ZM456.6 101.7C454.4 103.8 450.8 104.9 445.6 104.9L426.2 104.9C421 104.9 417.4 103.9 415.2 101.7 413 99.5 412 96 412 91.1L412 88.7C412 83.7 413.1 80.2 415.3 78.1 417.5 76 421.1 74.9 426.3 74.9L459.9 74.9 459.9 91.1C459.9 96 458.8 99.5 456.6 101.7Z" fill="currentColor"/><path d="M652.9 56.9C652.9 55.7 652.9 44.4 644.8 36.5 639.6 31.4 631.1 27.2 617 27.2L592.5 27.2 592.5 37.1 618.1 37.1C627.2 37.1 632.9 39.7 636.3 43.1 640.4 47.1 641.8 52.4 641.8 56.5L641.8 65 606.7 65C600 65 591 66.5 586.3 73.9 583.8 77.9 582.9 83.2 582.8 88.1L582.8 91.6C582.9 96.5 583.7 101.8 586.3 105.8 591 113.3 600 114.7 606.7 114.7L629 114.7C635.7 114.7 644.7 113.2 649.4 105.8 651.9 101.8 652.8 96.5 652.9 91.6 652.9 91.6 652.9 62.6 652.9 56.9ZM638.6 101.7C636.4 103.8 632.8 104.9 627.6 104.9L608.2 104.9C603 104.9 599.4 103.9 597.2 101.7 595 99.5 594 96 594 91.1L594 88.7C594 83.7 595.1 80.2 597.3 78.1 599.5 76 603.1 74.9 608.3 74.9L641.9 74.9 641.9 91.1C641.9 96 640.8 99.5 638.6 101.7Z" fill="currentColor"/><path d="M317.8 27.2 306.3 27.2 278.4 99.8 250.5 27.2 239.1 27.2 272.7 114.7 262.6 141 274.1 141Z" fill="currentColor"/><path d="M392.2 56.9C392.2 55.7 392.2 44.4 384.2 36.5 379.1 31.5 371 27.4 357.8 27.2L356.6 27.2C343.4 27.4 335.3 31.5 330.2 36.5 322.2 44.4 322.2 55.7 322.2 56.9 322.2 58.3 322.2 110.3 322.2 114.8L333.2 114.8 333.2 56.6C333.2 52.5 334.5 47.2 338.6 43.2 342 39.9 348.5 37.3 357.2 37.2 365.9 37.3 372.4 39.9 375.8 43.2 379.8 47.2 381.2 52.5 381.2 56.6L381.2 114.8 392.2 114.8C392.2 110.3 392.2 58.3 392.2 56.9Z" fill="currentColor"/><path d="M791 36.5C785.9 31.5 777.8 27.4 764.6 27.2L763.4 27.2C750.2 27.4 742.1 31.5 737 36.5 729 44.4 729 55.7 729 56.9L729 85.1C729 86.3 729 97.6 737 105.5 742.1 110.5 750.2 114.6 763.4 114.8L789.4 114.8 789.4 104.8 764 104.8C755.3 104.7 748.8 102.1 745.4 98.8 741.4 94.8 740 89.5 740 85.4L740 75.1 799 75.1 799 56.9C799.1 55.7 799.1 44.4 791 36.5ZM740.1 65.2 740.1 56.6C740.1 52.5 741.4 47.2 745.5 43.2 748.9 39.9 755.4 37.3 764.1 37.2 772.8 37.3 779.3 39.9 782.7 43.2 786.7 47.2 788.1 52.5 788.1 56.6L788.1 65.2 740.1 65.2Z" fill="currentColor"/></g><g><path d="M47.7 12.7C45.9 22.2 43.7 36.3 42.5 50.6 40.4 75.8 41.7 92.7 41.7 92.7L6.2 126.4C6.2 126.4 3.5 107.5 2.1 86.2 1.3 73 1 61.4 1 54.4 1 54 1.2 53.6 1.2 53.2 1.2 52.7 1.8 48 6.4 43.6 11.4 38.8 48.3 9.9 47.7 12.7Z" fill="#1966FF"/><path d="M47.7 12.7C45.9 22.2 43.7 36.3 42.5 50.6 42.5 50.6 3.2 45.9 1 55.4 1 54.9 1.7 49.1 6.3 44.7 11.3 39.9 48.3 9.9 47.7 12.7Z" fill="#1284EA"/><path d="M1 53.1C1 53.8 1 54.5 1 55.3 1.4 53.6 2.1 52.4 3.5 50.5 6.4 46.8 11.1 45.8 13 45.6 22.6 44.3 36.8 42.8 51.1 42.4 76.4 41.6 93.1 43.7 93.1 43.7L128.6 10C128.6 10 110 6.5 88.8 4 74.9 2.3 62.7 1.4 55.8 1 55.3 1 50.4 0.4 45.8 4.8 40.8 9.6 15.4 33.7 5.2 43.4 0.6 47.8 1 52.7 1 53.1Z" fill="#B4DC00"/><path d="M127.3 96.2C117.7 97.5 103.5 99.1 89.2 99.6 63.9 100.4 47.1 98.3 47.1 98.3L11.6 132.1C11.6 132.1 30.4 135.8 51.6 138.2 64.6 139.7 76.1 140.5 83.1 140.9 83.6 140.9 84.4 140.5 84.9 140.5 85.4 140.5 90.3 139.6 94.9 135.2 99.9 130.4 130.1 95.9 127.3 96.2Z" fill="#6F2DA8"/><path d="M127.3 96.2C117.7 97.5 103.5 99.1 89.2 99.6 89.2 99.6 91.9 139.1 82.4 140.8 82.9 140.8 89.4 140.5 94 136.1 99 131.3 130.1 95.9 127.3 96.2Z" fill="#591F91"/><path d="M84.5 141C83.8 141 83.1 140.9 82.3 140.9 84.1 140.6 85.3 140 87.2 138.6 91 135.9 92.2 131.2 92.6 129.3 94.3 119.8 96.6 105.7 97.7 91.4 99.7 66.2 98.5 49.4 98.5 49.4L134 15.6C134 15.6 136.6 34.4 138.1 55.7 139 69.6 139.3 81.9 139.4 88.7 139.4 89.2 139.8 94.1 135.2 98.5 130.2 103.3 104.8 127.5 94.7 137.2 89.9 141.6 85 141 84.5 141Z" fill="#49C2B3"/></g></g></g></svg></div>
@@ -397,7 +399,7 @@ aside.notes { display: none; }
 <section class="slide">
     <div class="slide-content">
         <div class="eyebrow reveal">Thursday · 17:00 to 19:00</div>
-        <h2 class="reveal">Three sprints, a checkpoint after each</h2>
+        <h2 class="reveal">Agenda: 3 Sprints, a Check Point after each</h2>
         <div class="agenda-bar reveal" aria-hidden="true"><span style="--c:var(--text-3)"></span><span style="--c:var(--blue)"></span><span style="--c:var(--teal)"></span><span style="--c:var(--purple)"></span><span style="--c:var(--teal)"></span><span style="--c:var(--pink)"></span><span style="--c:var(--teal)"></span><span style="--c:var(--blue)"></span><span style="--c:var(--text-3)"></span></div>
         <div class="agenda reveal">
             <span class="t"><span class="dot" style="--c:var(--text-3)"></span>17:00</span><span class="n">Welcome, food and drinks</span><span class="d">General intro while people grab pizza</span>
@@ -407,7 +409,7 @@ aside.notes { display: none; }
             <span class="t"><span class="dot" style="--c:var(--teal)"></span>17:45</span><span class="n">Sprint 2</span><span class="d">Get it running: book, release, keep</span>
             <span class="t"><span class="dot" style="--c:var(--pink)"></span>18:10</span><span class="n">Check Point 2 · pit stop</span><span class="d">Spotlight, lessons so far, food refill</span>
             <span class="t"><span class="dot" style="--c:var(--teal)"></span>18:20</span><span class="n">Sprint 3</span><span class="d">Rules hold, get demo-ready</span>
-            <span class="t"><span class="dot" style="--c:var(--blue)"></span>18:45</span><span class="n">Demos · Last Check Points</span><span class="d">Every team</span>
+            <span class="t"><span class="dot" style="--c:var(--blue)"></span>18:45</span><span class="n">Final Check Point · Demos</span><span class="d">Every team</span>
             <span class="t"><span class="dot" style="--c:var(--text-3)"></span>18:57</span><span class="n">Close</span><span class="d">What happens next</span>
         </div>
     </div>
@@ -588,23 +590,21 @@ is free until they arrive.
 <!-- 08 CHECKPOINT OVERVIEW -->
 <section class="slide">
     <div class="slide-content">
-        <div class="eyebrow reveal">Four checkpoints</div>
+        <div class="eyebrow reveal">Two checkpoints and a final one</div>
         <h2 class="reveal">Same finish line, your own route</h2>
         <div class="cp-track stagger">
             <div class="cp-step"><div class="bar"></div><span class="when">CP1 · 17:35</span><span class="name">Spec &amp; plan</span><span class="what">spec.md written, stack chosen, plan agreed with the AI</span></div>
-            <div class="cp-step"><div class="bar"></div><span class="when">CP2 · 18:10</span><span class="name">It runs, booking works</span><span class="what">App starts on a laptop; book and release a spot; data survives a refresh</span></div>
-            <div class="cp-step"><div class="bar" style="background:repeating-linear-gradient(90deg,var(--text-3) 0 8px,transparent 8px 14px)"></div><span class="when">Pit stop · 18:10</span><span class="name">What we learned</span><span class="what">CP2 spotlight, lessons so far, tips, food refill</span></div>
-            <div class="cp-step"><div class="bar" style="background:var(--pink)"></div><span class="when">CP3 · 18:45</span><span class="name">Rules hold</span><span class="what">Double booking, past dates and duplicates are refused</span></div>
-            <div class="cp-step"><div class="bar" style="background:var(--teal)"></div><span class="when">CP4 · 18:45</span><span class="name">Demo-ready</span><span class="what">Run command and journal ready, checked as you step up to demo</span></div>
+            <div class="cp-step"><div class="bar"></div><span class="when">CP2 · 18:10</span><span class="name">It runs, booking works</span><span class="what">App starts on a laptop; book and release a spot; data survives a refresh. Then the pit stop: lessons so far, food refill</span></div>
+            <div class="cp-step"><div class="bar" style="background:var(--teal)"></div><span class="when">Final · 18:45</span><span class="name">Rules hold, demo-ready</span><span class="what">Double booking, past dates and duplicates are refused; run command and journal ready</span></div>
         </div>
         <div class="cols-2 stagger">
             <div class="card accent-g">
                 <h3>Every team covers every checkpoint</h3>
-                <p>How you get there is up to you. A spreadsheet that refuses a double booking passes CP3 as much as a React app does.</p>
+                <p>How you get there is up to you. A spreadsheet that refuses a double booking passes the Final Check Point as much as a React app does.</p>
             </div>
             <div class="card accent-b">
                 <h3>CP1 and CP2: 10 minutes each</h3>
-                <p>Hands off keyboards. A board call, one team in the spotlight, then catch-up for anyone behind. CP3 and CP4 are shown in the demos.</p>
+                <p>Hands off keyboards. A board call, one team in the spotlight, then catch-up for anyone behind. The Final Check Point is shown in the demos.</p>
             </div>
         </div>
     </div>
@@ -639,6 +639,16 @@ is free until they arrive.
     <aside class="notes"><ul><li>Pick the spotlight team from the board: ahead, and not shown yet. With 5 teams, 2 get a spotlight and 3 open the demos. With 4 teams, 2 and 2.</li><li>The catch-up minutes are for teams marked need help. An organizer sits with them for the first 5 minutes of the next sprint.</li><li>Hold the 10 minutes. Cut questions, not the next sprint.</li></ul></aside>
 </section>
 
+<!-- SPRINT 1 GO -->
+<section class="slide">
+    <div class="slide-content">
+        <div class="eyebrow reveal">Sprint 1 · 17:15 to 17:35 · 20 minutes</div>
+        <h1 class="reveal">Let's <span class="g">go</span>.</h1>
+        <p class="lede reveal">Your route, your tools. Try something, look at what the AI did, keep what works.</p>
+    </div>
+    <aside class="notes"><ul><li>Start a 20-minute timer. Leave the checkpoint overview or the status board on screen during the build.</li><li>Journalists: note usage before the first prompt.</li></ul></aside>
+</section>
+
 <!-- 09 CP1 -->
 <section class="slide" style="--cp-color: var(--teal)">
     <div class="slide-content">
@@ -668,6 +678,16 @@ is free until they arrive.
         </div>
     </div>
     <aside class="notes"><ul><li>Teams that start coding before CP1 usually come back to it at CP2. Hold the line.</li></ul></aside>
+</section>
+
+<!-- SPRINT 2 GO -->
+<section class="slide">
+    <div class="slide-content">
+        <div class="eyebrow reveal">Sprint 2 · 17:45 to 18:10 · 25 minutes</div>
+        <h1 class="reveal">Let's <span class="g">go</span>.</h1>
+        <p class="lede reveal">Your route, your tools. Try something, look at what the AI did, keep what works.</p>
+    </div>
+    <aside class="notes"><ul><li>Start a 25-minute timer. Organizers go first to the teams marked need help at CP1.</li></ul></aside>
 </section>
 
 <!-- 10 CP2 -->
@@ -726,7 +746,7 @@ is free until they arrive.
             </div>
         </div>
     </div>
-    <aside class="notes"><ul><li>The spotlight goes to the second team to show. The stuck team's minute is the most useful story in the room: protect it.</li><li>Mark the board from the tables while people refill. No separate board call here.</li><li>Count the hands out loud and write the numbers in the shared notes; they feed the session 2 summary.</li><li>Keep it to 10 minutes. It doubles as the food and drink refill, so say so: hands off keyboards, grab a slice, listen.</li><li>CP3 needs the time. Sprint 3 starts at 18:20 sharp.</li></ul></aside>
+    <aside class="notes"><ul><li>The spotlight goes to the second team to show. The stuck team's minute is the most useful story in the room: protect it.</li><li>Mark the board from the tables while people refill. No separate board call here.</li><li>Count the hands out loud and write the numbers in the shared notes; they feed the session 2 summary.</li><li>Keep it to 10 minutes. It doubles as the food and drink refill, so say so: hands off keyboards, grab a slice, listen.</li><li>The Final Check Point needs the time. Sprint 3 starts at 18:20 sharp.</li></ul></aside>
 </section>
 
 <!-- PIT STOP TIPS -->
@@ -756,67 +776,67 @@ is free until they arrive.
                 <p>Repeating yourself? Put it in <code>CLAUDE.md</code>: run the app after each change, no new dependencies without asking, fake data only.</p>
             </div>
         </div>
-        <p class="lede reveal">All four point at CP3: prove it works, do not take the AI's word for it.</p>
+        <p class="lede reveal">All four point at the Final Check Point: prove it works, do not take the AI's word for it.</p>
     </div>
     <aside class="notes"><ul><li>Tip 01 is a true story from preparing this session. Tell it in 30 seconds.</li><li>Swap a tip for something you saw at the tables if it is more relevant.</li></ul></aside>
 </section>
 
-<!-- 12 CP3 -->
-<section class="slide" style="--cp-color: var(--pink)">
+<!-- BLUEBOX -->
+<section class="slide">
     <div class="slide-content">
-        <div class="cp-layout">
-            <div class="cp-left reveal">
-                <span class="cp-num">CP3</span>
-                <div class="cp-meta">
-                    <span class="tag o">18:45</span><span class="tag o">Rules hold</span>
-                </div>
-                <h2>Try to break it, and fail</h2>
-                <p class="lede">The acceptance criteria, proven by the Breaker, not by the AI saying "all good".</p>
-            </div>
-            <div class="cp-right stagger">
-                <div class="card accent-o">
-                    <h3>Must show (each one refused, with a clear message)</h3>
-                    <ul class="checklist"><li><span class="box"></span><p>Two bookings for the same spot on the same day</p></li><li><span class="box"></span><p>A booking for a date in the past</p></li><li><span class="box"></span><p>A second booking by the same person on the same day</p></li><li><span class="box"></span><p>Empty or nonsense input (no name, invalid date)</p></li></ul>
-                </div>
-                <div class="card">
-                    <h3>How we check</h3>
-                    <p>Breaker runs them live in your demo. Bonus: an automated test, shown failing on purpose.</p>
-                </div>
-                <div class="card accent-o">
-                    <h3>Behind?</h3>
-                    <p>Paste the acceptance criteria and ask the AI to check each one against the code and tell you which fail, with evidence.</p>
-                </div>
+        <div class="eyebrow reveal">Extra vitamin · last sprint, optional</div>
+        <h2 class="reveal">Want an extra? Let Bluebox watch your app</h2>
+        <div class="cols-2 stagger">
+            <figure class="photo logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTG9nbyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDM3MCAxMDgwIDM0MCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzMxN2FmZjsKICAgICAgfQoKICAgICAgLmNscy0yIHsKICAgICAgICBmaWxsOiAjZjVmNWZmOwogICAgICB9CgogICAgICAuY2xzLTMgewogICAgICAgIGZpbGw6ICM3NGFiZmY7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgZmlsbDogIzAwMzFjOTsKICAgICAgfQoKICAgICAgLmNscy01IHsKICAgICAgICBmaWxsOiAjMDA1MWZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtNSIgZD0iTTAsNDE5LjV2MTYxLjczYzAsNC41NCwxLjI1LDYuOTYsMS4yNSw2Ljk2bDYwLjQ4LTM2LjA1di0xNzAuOTFMMCw0MTkuNVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTcuMiw1OTUuNjNjMi41NywxLjQ5LDEwNy43LDQ2Ljg3LDEwNy43LDQ2Ljg3LDAsMCw1Ljc5LDIuMTYsMTAuNDYsMCw0LjY3LTIuMTYsNTguNTgtMzguOTgsNTguNTgtMzguOThsLTEyMi4xNy01MS42TDEuMjUsNTg4LjE5YzEuMzIsMy42MiwzLjM3LDUuOTQsNS45NSw3LjQ0WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTkyLjg1LDQ3NS41OHMuOTQsMS44Ny45NCw0LjQ4djEwNC4xMmMwLDkuMS0yLjA5LDE0LjQxLTcuNzMsMTguMTMsMCwwLTQ4LjU0LDMyLjg0LTUzLjg4LDM2LjQyLTEuMzQuOS0zLjI2LDIuMTUtNS43OSwzLjU0LTIuNzEsMS40OS02LjcsMS4xNy02LjcsMS4xNywwLDAsMTIuNDkuMzcsMTIuNDktMjEuNjd2LTEwMy42OGMwLTMuMzYtLjUzLTQuNTgtLjUzLTQuNThsNjEuMi0zNy45M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTYxLjg3LDQ4Mi43bDYxLjQ1LTM5LjMxczYwLjg3LDIzLjg5LDYxLjgzLDI0LjM4YzEuNjYuODYsNS40OSwyLjI3LDcuNjksNy44bC02MS4yLDM3LjkzYy0xLjM4LTMuMjctMy45OC00LjM5LTguNTktNi41MmwtNjEuMTgtMjQuMjhaIi8+CiAgPC9nPgogIDxnPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTMzMy40Myw2MDQuMTFjLTguODcsMC0xNS45MS0yLjUxLTIxLjEyLTcuNTMtNS4yMi01LjAyLTcuODItMTEuOS03LjgyLTIwLjY0bDUuNDgsNS42N2gtNS40OHYyMC41NGgtMjMuODZ2LTE0Mi43OGgyNC40NXYzMC4xMmwtLjc4LDI1LjYyaDUuNjdsLTUuNDgsNS42N2MwLTguNzQsMi42MS0xNS42MSw3LjgyLTIwLjY0LDUuMjEtNS4wMiwxMi4yNS03LjUzLDIxLjEyLTcuNTMsMTAuODIsMCwxOS40OSwzLjcyLDI2LjAxLDExLjE1LDYuNTIsNy40Myw5Ljc4LDE3LjQ4LDkuNzgsMzAuMTJ2MjkuMTRjMCwxMi41Mi0zLjI2LDIyLjQ5LTkuNzgsMjkuOTMtNi41Miw3LjQzLTE1LjE5LDExLjE1LTI2LjAxLDExLjE1Wk0zMjQuODIsNTgyLjk4YzYuMjYsMCwxMS4xNS0xLjgyLDE0LjY3LTUuNDgsMy41Mi0zLjY1LDUuMjgtOC44Nyw1LjI4LTE1LjY1di0yNi45OWMwLTYuNzgtMS43Ni0xMi01LjI4LTE1LjY1LTMuNTItMy42NS04LjQxLTUuNDgtMTQuNjctNS40OHMtMTAuOTUsMS44Ni0xNC40Nyw1LjU4Yy0zLjUyLDMuNzItNS4yOCw4LjktNS4yOCwxNS41NXYyNi45OWMwLDYuNjUsMS43NiwxMS44Myw1LjI4LDE1LjU1LDMuNTIsMy43Miw4LjM0LDUuNTgsMTQuNDcsNS41OFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNDU4LjAyLDYwMi4xNWMtNy4wNCwwLTEzLjItMS40My0xOC40OC00LjMtNS4yOC0yLjg3LTkuNDItNi45NC0xMi40Mi0xMi4yMi0zLTUuMjgtNC41LTExLjM4LTQuNS0xOC4yOXYtODUuODdoLTM0LjQydi0yMi4xaDU4Ljg3djEwNy45N2MwLDMuOTEsMS4xNCw3LjAxLDMuNDIsOS4yOSwyLjI4LDIuMjgsNS4zOCwzLjQyLDkuMjksMy40MmgzMi40N3YyMi4xaC0zNC4yM1oiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNTU4Ljk0LDYwNC4xMWMtMTMuNjksMC0yNC40NS0zLjgxLTMyLjI3LTExLjQ0cy0xMS43NC0xOC4wMi0xMS43NC0zMS4ydi02Ni44OWgyNC40NXY2Ni43YzAsNi45MSwxLjY5LDEyLjIzLDUuMDksMTUuOTQsMy4zOSwzLjcyLDguMjEsNS41OCwxNC40Nyw1LjU4czEwLjkyLTEuODYsMTQuMzgtNS41OGMzLjQ1LTMuNzIsNS4xOC05LjAzLDUuMTgtMTUuOTR2LTY2LjdoMjQuNDV2NjYuODljMCwxMy4xNy0zLjk4LDIzLjU3LTExLjkzLDMxLjItNy45Niw3LjYzLTE4LjY1LDExLjQ0LTMyLjA4LDExLjQ0WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik02NzYuNDksNjA0LjExYy05LjEzLDAtMTcuMDgtMS43Ni0yMy44Ni01LjI4LTYuNzgtMy41Mi0xMi4wMy04LjQ0LTE1Ljc1LTE0Ljc3LTMuNzItNi4zMi01LjU3LTEzLjcyLTUuNTctMjIuMnYtMjYuOTljMC04LjQ3LDEuODYtMTUuODcsNS41Ny0yMi4yLDMuNzItNi4zMiw4Ljk2LTExLjI1LDE1Ljc1LTE0Ljc3LDYuNzgtMy41MiwxNC43My01LjI4LDIzLjg2LTUuMjhzMTYuODUsMS43NiwyMy41Nyw1LjI4YzYuNzIsMy41MiwxMS45Myw4LjQ0LDE1LjY1LDE0Ljc3LDMuNzIsNi4zMyw1LjU3LDEzLjczLDUuNTcsMjIuMnYxOS4zNmgtNjYuMzF2Ny42M2MwLDcuNTYsMS44MiwxMy4yNyw1LjQ4LDE3LjExLDMuNjUsMy44NSw5LjA2LDUuNzcsMTYuMjMsNS43Nyw1LjQ4LDAsOS45MS0uOTQsMTMuMy0yLjg0LDMuMzktMS44OSw1LjU0LTQuNjYsNi40NS04LjMxaDI0LjA2Yy0xLjgzLDkuMjYtNi43NSwxNi42Ni0xNC43NywyMi4yLTguMDIsNS41NC0xNy43Nyw4LjMxLTI5LjI0LDguMzFaTTY5Ny42Miw1NDAuNTR2LTUuODdjMC03LjQzLTEuNzYtMTMuMTMtNS4yOC0xNy4xMS0zLjUyLTMuOTgtOC44LTUuOTctMTUuODQtNS45N3MtMTIuMzksMi4wMi0xNi4wNCw2LjA2Yy0zLjY1LDQuMDQtNS40OCw5Ljc4LTUuNDgsMTcuMjF2NC4xMWw0NC40LS4zOS0xLjc2LDEuOTZaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTgwMi44NSw2MDQuMTFjLTguODcsMC0xNS45MS0yLjUxLTIxLjEzLTcuNTMtNS4yMi01LjAyLTcuODItMTEuOS03LjgyLTIwLjY0bDUuNDgsNS42N2gtNS40OHYyMC41NGgtMjMuODZ2LTE0Mi43OGgyNC40NXYzMC4xMmwtLjc4LDI1LjYyaDUuNjdsLTUuNDgsNS42N2MwLTguNzQsMi42MS0xNS42MSw3LjgyLTIwLjY0LDUuMjEtNS4wMiwxMi4yNi03LjUzLDIxLjEzLTcuNTMsMTAuODIsMCwxOS40OSwzLjcyLDI2LjAxLDExLjE1LDYuNTIsNy40Myw5Ljc4LDE3LjQ4LDkuNzgsMzAuMTJ2MjkuMTRjMCwxMi41Mi0zLjI2LDIyLjQ5LTkuNzgsMjkuOTMtNi41Miw3LjQzLTE1LjE5LDExLjE1LTI2LjAxLDExLjE1Wk03OTQuMjQsNTgyLjk4YzYuMjYsMCwxMS4xNS0xLjgyLDE0LjY3LTUuNDgsMy41Mi0zLjY1LDUuMjgtOC44Nyw1LjI4LTE1LjY1di0yNi45OWMwLTYuNzgtMS43Ni0xMi01LjI4LTE1LjY1LTMuNTItMy42NS04LjQxLTUuNDgtMTQuNjctNS40OHMtMTAuOTUsMS44Ni0xNC40Nyw1LjU4Yy0zLjUyLDMuNzItNS4yOCw4LjktNS4yOCwxNS41NXYyNi45OWMwLDYuNjUsMS43NiwxMS44Myw1LjI4LDE1LjU1LDMuNTIsMy43Miw4LjM0LDUuNTgsMTQuNDcsNS41OFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNOTExLjAxLDYwMy45MWMtOS4xMywwLTE3LjA1LTEuNzMtMjMuNzYtNS4xOC02LjcyLTMuNDUtMTEuOTMtOC4zNC0xNS42NS0xNC42Ny0zLjcyLTYuMzItNS41Ny0xMy43OS01LjU3LTIyLjR2LTI2LjZjMC04LjYxLDEuODYtMTYuMDcsNS41Ny0yMi40LDMuNzItNi4zMiw4LjkzLTExLjIxLDE1LjY1LTE0LjY3LDYuNzEtMy40NSwxNC42NC01LjE4LDIzLjc2LTUuMThzMTcuMjEsMS43MywyMy44Niw1LjE4YzYuNjUsMy40NiwxMS44Myw4LjM1LDE1LjU1LDE0LjY3LDMuNzIsNi4zMyw1LjU3LDEzLjczLDUuNTcsMjIuMnYyNi44YzAsOC42MS0xLjg2LDE2LjA3LTUuNTcsMjIuNC0zLjcyLDYuMzMtOC45LDExLjIyLTE1LjU1LDE0LjY3LTYuNjUsMy40NS0xNC42MSw1LjE4LTIzLjg2LDUuMThaTTkxMS4wMSw1ODIuNTljNi41MiwwLDExLjU3LTEuNzksMTUuMTYtNS4zOCwzLjU4LTMuNTksNS4zOC04Ljc3LDUuMzgtMTUuNTV2LTI2LjZjMC02LjkxLTEuNzktMTIuMTMtNS4zOC0xNS42NS0zLjU5LTMuNTItOC42NC01LjI4LTE1LjE2LTUuMjhzLTExLjQxLDEuNzYtMTUuMDYsNS4yOGMtMy42NSwzLjUyLTUuNDgsOC43NC01LjQ4LDE1LjY1djI2LjZjMCw2Ljc4LDEuODIsMTEuOTYsNS40OCwxNS41NSwzLjY1LDMuNTksOC42Nyw1LjM4LDE1LjA2LDUuMzhaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTk3Ni43Miw2MDIuMTVsMzcuNTUtNTUuNTUtMzUuMDEtNTIuMDNoMjcuNThsMTYuNjMsMjYuNDFjMS4wNCwxLjU2LDEuOTksMy4zMiwyLjg0LDUuMjguODUsMS45NiwxLjUzLDMuNTIsMi4wNSw0LjY5LjUyLTEuMTcsMS4yNC0yLjc0LDIuMTUtNC42OS45MS0xLjk2LDEuODItMy43MiwyLjc0LTUuMjhsMTYuODItMjYuNDFoMjcuNThsLTM1LjAxLDUyLjAzLDM3LjM2LDU1LjU1aC0yNy43OGwtMTguNTgtMjkuNTRjLTEuMDQtMS42OS0yLjAyLTMuNTItMi45My01LjQ4LS45MS0xLjk2LTEuNy0zLjUyLTIuMzUtNC42OS0uNTIsMS4xNy0xLjI0LDIuNzQtMi4xNSw0LjY5LS45MSwxLjk2LTEuODksMy43OC0yLjkzLDUuNDhsLTE4Ljk3LDI5LjU0aC0yNy41OFoiLz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8Zz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik02MjUuMjIsNjg2Ljg3Yy0zLjE3LDAtNS42OS0uOS03LjU1LTIuNjktMS44Ny0xLjc5LTIuOC00LjI2LTIuOC03LjM4bDEuOTYsMi4wM2gtMS45NnY3LjM1aC04LjUzdi01MS4wN2g4Ljc0djEwLjc3bC0uMjgsOS4xNmgyLjAzbC0xLjk2LDIuMDNjMC0zLjEyLjkzLTUuNTgsMi44LTcuMzgsMS44Ni0xLjgsNC4zOC0yLjY5LDcuNTUtMi42OSwzLjg3LDAsNi45NywxLjMzLDkuMywzLjk5LDIuMzMsMi42NiwzLjUsNi4yNSwzLjUsMTAuNzd2MTAuNDJjMCw0LjQ4LTEuMTcsOC4wNC0zLjUsMTAuNy0yLjMzLDIuNjYtNS40MywzLjk5LTkuMywzLjk5Wk02MjIuMTQsNjc5LjMyYzIuMjQsMCwzLjk5LS42NSw1LjI1LTEuOTZzMS44OS0zLjE3LDEuODktNS42di05LjY1YzAtMi40My0uNjMtNC4yOS0xLjg5LTUuNi0xLjI2LTEuMy0zLjAxLTEuOTYtNS4yNS0xLjk2cy0zLjkyLjY2LTUuMTgsMS45OWMtMS4yNiwxLjMzLTEuODksMy4xOC0xLjg5LDUuNTZ2OS42NWMwLDIuMzguNjMsNC4yMywxLjg5LDUuNTYsMS4yNiwxLjMzLDIuOTgsMS45OSw1LjE4LDEuOTlaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNjU0LjUzLDY5OC43Nmw1LjM5LTE0LjY5LTE0LjM0LTM2LjM3aDkuNThsNy4xNCwxOS42NmMuMzcsMS4wNy43NSwyLjM3LDEuMTIsMy44OC4zNywxLjUyLjY1LDIuNzYuODQsMy43NC4yMy0uOTguNTQtMi4yMy45MS0zLjc0LjM3LTEuNTIuNzQtMi44MSwxLjEyLTMuODhsNi43Mi0xOS42Nmg5LjIzbC0xOC41NCw1MS4wN2gtOS4xNloiLz4KICAgICAgPC9nPgogICAgICA8Zz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik03MDcuNTEsNjg2LjE3di01MS4wN2gxNS4xOGMzLjQ1LDAsNi40NS42NSw4Ljk5LDEuOTYsMi41NCwxLjMxLDQuNTEsMy4xNSw1LjkxLDUuNTMsMS40LDIuMzgsMi4xLDUuMiwyLjEsOC40NnYxOS4xYzAsMy4yMi0uNyw2LjAzLTIuMSw4LjQzLTEuNCwyLjQtMy4zNyw0LjI3LTUuOTEsNS42cy01LjU0LDEuOTktOC45OSwxLjk5aC0xNS4xOFpNNzE2LjI1LDY3OC4xM2g2LjQ0YzIuNTIsMCw0LjUyLS43MSw2LjAyLTIuMTMsMS40OS0xLjQyLDIuMjQtMy4zNywyLjI0LTUuODR2LTE5LjFjMC0yLjQyLS43NS00LjM1LTIuMjQtNS43Ny0xLjQ5LTEuNDItMy41LTIuMTMtNi4wMi0yLjEzaC02LjQ0djM0Ljk4WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTc1NS44NSw2OTguNzZsNS4zOS0xNC42OS0xNC4zNC0zNi4zN2g5LjU4bDcuMTMsMTkuNjZjLjM3LDEuMDcuNzUsMi4zNywxLjEyLDMuODhzLjY1LDIuNzYuODQsMy43NGMuMjMtLjk4LjU0LTIuMjMuOTEtMy43NC4zNy0xLjUyLjc1LTIuODEsMS4xMi0zLjg4bDYuNzItMTkuNjZoOS4yM2wtMTguNTQsNTEuMDdoLTkuMTZaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNzkxLjU5LDY4Ni4xN3YtMzguNDdoOC41M3Y3LjM0aDIuMzhsLTIuMzgsMi4wM2MwLTMuMTcuOTItNS42NCwyLjc2LTcuNDIsMS44NC0xLjc3LDQuMzctMi42Niw3LjU5LTIuNjYsMy43OCwwLDYuOCwxLjI2LDkuMDYsMy43OCwyLjI2LDIuNTIsMy4zOSw1LjksMy4zOSwxMC4xNHYyNS4yNWgtOC43NHYtMjQuMzRjMC0yLjMzLS42MS00LjEzLTEuODItNS4zOS0xLjIxLTEuMjYtMi45Mi0xLjg5LTUuMTEtMS44OXMtMy44NC42NS01LjA3LDEuOTZjLTEuMjQsMS4zMS0xLjg1LDMuMTctMS44NSw1LjZ2MjQuMDZoLTguNzRaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNODQ0Ljg5LDY4Ni44N2MtMy45NiwwLTcuMDktMS4wNS05LjM3LTMuMTUtMi4yOS0yLjEtMy40My00LjkyLTMuNDMtOC40NiwwLTMuNzgsMS4yNi02LjY5LDMuNzgtOC43NCwyLjUyLTIuMDUsNi4wOS0zLjA4LDEwLjctMy4wOGg5LjU4di0zLjI5YzAtMS44Ni0uNjEtMy4zMi0xLjgyLTQuMzctMS4yMS0xLjA1LTIuODctMS41Ny00Ljk3LTEuNTctMS44NywwLTMuNDQuNDItNC43MiwxLjI2LTEuMjguODQtMi4wNCwxLjk4LTIuMjcsMy40M2gtOC41M2MuNDItMy42NCwyLjA1LTYuNTMsNC45LTguNjcsMi44NC0yLjE0LDYuNDgtMy4yMiwxMC45MS0zLjIyLDQuNzEsMCw4LjQzLDEuMTgsMTEuMTYsMy41MywyLjczLDIuMzYsNC4wOSw1LjU0LDQuMDksOS41NXYyNi4wOWgtOC40NnYtNi43MmgtMS40bDEuNC0xLjg5YzAsMi44NS0xLjA1LDUuMTEtMy4xNSw2Ljc5LTIuMSwxLjY4LTQuOSwyLjUyLTguMzksMi41MlpNODQ3Ljc2LDY4MC4zYzIuNDcsMCw0LjQ5LS42Myw2LjA1LTEuODksMS41Ni0xLjI2LDIuMzQtMi44OSwyLjM0LTQuOXYtNC42OWgtOS40NGMtMS43NywwLTMuMi41MS00LjI3LDEuNTQtMS4wNywxLjAzLTEuNjEsMi4zOC0xLjYxLDQuMDYsMCwxLjgyLjYxLDMuMjUsMS44Miw0LjMsMS4yMSwxLjA1LDIuOTEsMS41Nyw1LjExLDEuNTdaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNODk1LjMzLDY4Ni4xN2MtMy42OCwwLTYuNTYtMS4wMy04LjY0LTMuMDgtMi4wOC0yLjA1LTMuMTEtNC44Ny0zLjExLTguNDZ2LTE5LjAzaC0xMC40MnYtNy45aDEwLjQydi0xMC44NGg4LjgxdjEwLjg0aDE0Ljc2djcuOWgtMTQuNzZ2MTkuMDNjMCwyLjQzLDEuMTksMy42NCwzLjU3LDMuNjRoMTAuNDl2Ny45MWgtMTEuMTJaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNOTE4LjY5LDY4Ni4xN3YtMzguNDdoOC4yNnY3LjM0aDIuMTdsLTIuNTksNC40OGMwLTQuMTUuOTMtNy4yNywyLjgtOS4zNywxLjg2LTIuMSw0LjYyLTMuMTUsOC4yNS0zLjE1LDQuMTUsMCw3LjQyLDEuMjgsOS43OSwzLjg1LDIuMzgsMi41NywzLjU3LDYuMTEsMy41NywxMC42M3YyLjhoLTkuMTZ2LTIuMTdjMC0yLjQ3LS42NC00LjM4LTEuOTItNS43NHMtMy4wNC0yLjAzLTUuMjgtMi4wMy00LjA1LjY4LTUuMjgsMi4wM2MtMS4yNCwxLjM1LTEuODUsMy4yNi0xLjg1LDUuNzR2MjQuMDZoLTguNzRaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNOTcwLjgxLDY4Ni44N2MtMy45NiwwLTcuMDktMS4wNS05LjM3LTMuMTUtMi4yOS0yLjEtMy40My00LjkyLTMuNDMtOC40NiwwLTMuNzgsMS4yNi02LjY5LDMuNzgtOC43NCwyLjUyLTIuMDUsNi4wOS0zLjA4LDEwLjctMy4wOGg5LjU4di0zLjI5YzAtMS44Ni0uNjEtMy4zMi0xLjgyLTQuMzctMS4yMS0xLjA1LTIuODctMS41Ny00Ljk3LTEuNTctMS44NywwLTMuNDQuNDItNC43MiwxLjI2LTEuMjguODQtMi4wNCwxLjk4LTIuMjcsMy40M2gtOC41M2MuNDItMy42NCwyLjA1LTYuNTMsNC45LTguNjcsMi44NC0yLjE0LDYuNDgtMy4yMiwxMC45MS0zLjIyLDQuNzEsMCw4LjQzLDEuMTgsMTEuMTYsMy41MywyLjczLDIuMzYsNC4wOSw1LjU0LDQuMDksOS41NXYyNi4wOWgtOC40NnYtNi43MmgtMS40bDEuNC0xLjg5YzAsMi44NS0xLjA1LDUuMTEtMy4xNSw2Ljc5LTIuMSwxLjY4LTQuOSwyLjUyLTguMzksMi41MlpNOTczLjY3LDY4MC4zYzIuNDcsMCw0LjQ5LS42Myw2LjA1LTEuODksMS41Ni0xLjI2LDIuMzQtMi44OSwyLjM0LTQuOXYtNC42OWgtOS40NGMtMS43NywwLTMuMi41MS00LjI3LDEuNTQtMS4wNywxLjAzLTEuNjEsMi4zOC0xLjYxLDQuMDYsMCwxLjgyLjYxLDMuMjUsMS44Miw0LjMsMS4yMSwxLjA1LDIuOTEsMS41Nyw1LjExLDEuNTdaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTAxNy4yNSw2ODYuODdjLTMuMjcsMC02LjEyLS42Mi04LjU3LTEuODUtMi40NS0xLjI0LTQuMzUtMi45OC01LjctNS4yNS0xLjM1LTIuMjYtMi4wMy00LjkzLTIuMDMtOC4wMXYtOS42NWMwLTMuMTIuNjgtNS44MSwyLjAzLTguMDQsMS4zNS0yLjI0LDMuMjUtMy45OCw1LjctNS4yMSwyLjQ1LTEuMjMsNS4zLTEuODUsOC41Ny0xLjg1LDQuODUsMCw4LjcyLDEuMjUsMTEuNjEsMy43NCwyLjg5LDIuNSw0LjQxLDUuODksNC41NSwxMC4xOGgtOC43NGMtLjE0LTItLjg1LTMuNTUtMi4xMy00LjY1LTEuMjgtMS4xLTMuMDQtMS42NC01LjI4LTEuNjRzLTQuMTguNjQtNS41MywxLjkyYy0xLjM1LDEuMjgtMi4wMywzLjExLTIuMDMsNS40OXY5LjcyYzAsMi4zOC42OCw0LjIyLDIuMDMsNS41MywxLjM1LDEuMzEsMy4xOSwxLjk2LDUuNTMsMS45NnM0LS41NSw1LjI4LTEuNjRjMS4yOC0xLjEsMS45OS0yLjY1LDIuMTMtNC42NWg4Ljc0Yy0uMTQsNC4yOS0xLjY1LDcuNjgtNC41NSwxMC4xOC0yLjg5LDIuNS02Ljc2LDMuNzQtMTEuNjEsMy43NFoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMDU5LjA4LDY4Ni44N2MtMy4yNiwwLTYuMTEtLjYzLTguNTMtMS44OS0yLjQzLTEuMjYtNC4zLTMuMDItNS42My01LjI4LTEuMzMtMi4yNi0xLjk5LTQuOTEtMS45OS03Ljk0di05LjY1YzAtMy4wMy42Ni01LjY4LDEuOTktNy45NCwxLjMzLTIuMjYsMy4yMS00LjAyLDUuNjMtNS4yOCwyLjQyLTEuMjYsNS4yNy0xLjg5LDguNTMtMS44OXM2LjAzLjYzLDguNDMsMS44OWMyLjQsMS4yNiw0LjI3LDMuMDIsNS42LDUuMjgsMS4zMywyLjI2LDEuOTksNC45MSwxLjk5LDcuOTR2Ni45MmgtMjMuNzF2Mi43M2MwLDIuNzEuNjUsNC43NSwxLjk2LDYuMTIsMS4zMSwxLjM4LDMuMjQsMi4wNiw1LjgxLDIuMDYsMS45NiwwLDMuNTQtLjM0LDQuNzYtMS4wMSwxLjIxLS42OCwxLjk4LTEuNjcsMi4zMS0yLjk3aDguNmMtLjY1LDMuMzEtMi40MSw1Ljk2LTUuMjgsNy45NC0yLjg3LDEuOTgtNi4zNiwyLjk3LTEwLjQ2LDIuOTdaTTEwNjYuNjQsNjY0LjE0di0yLjFjMC0yLjY2LS42My00LjctMS44OS02LjEyLTEuMjYtMS40Mi0zLjE1LTIuMTMtNS42Ny0yLjEzcy00LjQzLjcyLTUuNzQsMi4xNy0xLjk2LDMuNS0xLjk2LDYuMTZ2MS40N2wxNS44OC0uMTQtLjYzLjdaIi8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="Eyes into production for your coding agent"><figcaption>Eyes into production for your coding agent</figcaption></figure>
+            <div class="card accent-b">
+                <h3>Your agent built it. Bluebox sees it run.</h3>
+                <p>Send your app's telemetry to your Dynatrace tenant, break a rule on purpose, and ask Bluebox what went wrong and how to fix it.</p>
+                <span class="tag b"><a href="https://bluebox.ai" target="_blank" rel="noopener">bluebox.ai</a></span><span class="tag b">Log in with your Dynatrace-linked GitHub</span>
             </div>
         </div>
     </div>
-    <aside class="notes"><ul><li>Ask the AI "what did you run to verify that?" Teams that get a claim without output should not mark CP3 done.</li></ul></aside>
+    <aside class="notes"><ul><li>Optional during the last sprint. With or without it, a team can pass the Final Check Point.</li><li>Do not sign up for a personal account on bluebox.ai: tenants are limited and kept for customers. Logging in with the GitHub account linked to your Dynatrace email connects Bluebox to your own Dynatrace tenant.</li><li>Getting started: the "Bluebox - Getting started" page on the AI-First SharePoint. Bugs and feedback: support@bluebox.ai.</li></ul></aside>
 </section>
 
-<!-- 13 CP4 -->
+<!-- SPRINT 3 GO -->
+<section class="slide">
+    <div class="slide-content">
+        <div class="eyebrow reveal">Sprint 3 · 18:20 to 18:45 · 25 minutes</div>
+        <h1 class="reveal">Let's <span class="g">go</span>.</h1>
+        <p class="lede reveal">Your route, your tools. Try something, look at what the AI did, keep what works.</p>
+    </div>
+    <aside class="notes"><ul><li>Start a 25-minute timer. Remind teams that demos start at 18:45 sharp, ready or not.</li></ul></aside>
+</section>
+
+<!-- 12 FINAL -->
 <section class="slide" style="--cp-color: var(--teal)">
     <div class="slide-content">
         <div class="cp-layout">
             <div class="cp-left reveal">
-                <span class="cp-num">CP4</span>
+                <span class="cp-num">Final</span>
                 <div class="cp-meta">
-                    <span class="tag">18:45</span><span class="tag">Demo-ready</span>
+                    <span class="tag">18:45</span><span class="tag">Rules hold, demo-ready</span>
                 </div>
-                <h2>Someone else could run it</h2>
-                <p class="lede">Wrap up so the work survives today and can be compared in session 2.</p>
+                <h2>Try to break it, then hand it over</h2>
+                <p class="lede">The acceptance criteria, proven by the Breaker in your demo, not by the AI saying "all good". Then wrap up so someone else could run it.</p>
             </div>
             <div class="cp-right stagger">
+                <div class="card accent-o">
+                    <h3>Rules hold (each one refused, with a clear message)</h3>
+                    <ul class="checklist"><li><span class="box"></span><p>Two bookings for the same spot on the same day</p></li><li><span class="box"></span><p>A booking for a date in the past</p></li><li><span class="box"></span><p>A second booking by the same person on the same day</p></li><li><span class="box"></span><p>Empty or nonsense input (no name, invalid date)</p></li></ul>
+                </div>
                 <div class="card accent-g">
-                    <h3>Must show</h3>
-                    <ul class="checklist"><li><span class="box"></span><p>A README with the one-line command to run it</p></li><li><span class="box"></span><p><code>journal.md</code> filled in: models, usage before/after, best prompt, where it went wrong</p></li><li><span class="box"></span><p>A 2-minute demo planned: one booking, one refused double booking, one learning</p></li><li><span class="box"></span><p>Final commit; code shared with the organizers (repo link or zip)</p></li></ul>
+                    <h3>Demo-ready</h3>
+                    <ul class="checklist"><li><span class="box"></span><p>A README with the one-line command to run it</p></li><li><span class="box"></span><p><code>journal.md</code> filled in, final commit, code shared with the organizers</p></li></ul>
                 </div>
                 <div class="card accent-b">
-                    <h3>Done early?</h3>
-                    <p>Pick one: "my bookings" view, a week view, automated tests, or a nicer UI. Not login.</p>
+                    <h3>Behind? Done early?</h3>
+                    <p>Behind: ask the AI to check each acceptance criterion against the code and show which fail, with evidence. Done early: a "my bookings" view, a week view, automated tests, or Bluebox. Not login.</p>
                 </div>
             </div>
         </div>
     </div>
-    <aside class="notes"><ul><li>Collect code and journals at the end. The journals are what we compare in session 2.</li></ul></aside>
+    <aside class="notes"><ul><li>Checked live in the demo: the Breaker runs the refusals, the team shows the run command and the journal.</li><li>Ask the AI "what did you run to verify that?" Teams that get a claim without output should not mark the Final Check Point done.</li><li>Collect code and journals at the end. The journals are what we compare in session 2.</li></ul></aside>
 </section>
 
 <!-- 14 STATUS BOARD -->
@@ -826,7 +846,7 @@ is free until they arrive.
         <h2 class="reveal">Where every team is</h2>
 <div class="reveal">
     <table class="board" aria-label="Team checkpoint status">
-        <thead><tr><th>Team</th><th>CP1 · Spec</th><th>CP2 · Booking</th><th>CP3 · Rules</th><th>CP4 · Demo</th></tr></thead>
+        <thead><tr><th>Team</th><th>CP1 · Spec</th><th>CP2 · Booking</th><th>Final · Demo</th></tr></thead>
         <tbody id="boardBody"></tbody>
     </table>
 </div>
@@ -853,7 +873,7 @@ is free until they arrive.
 <span class="k">Team / stack:</span>
 <span class="k">Tools &amp; models:</span>   e.g. Claude Code, Sonnet
 <span class="k">Usage:</span>            before ___  after ___
-<span class="k">Checkpoints:</span>      CP1 __ CP2 __ CP3 __ CP4 __
+<span class="k">Checkpoints:</span>      CP1 __ CP2 __ Final __
 <span class="k">Best prompt:</span>      (paste it)
 <span class="k">Where it went wrong:</span>
 <span class="k">How we caught it:</span>
@@ -870,7 +890,7 @@ is free until they arrive.
 <!-- 16 DEMOS -->
 <section class="slide">
     <div class="slide-content">
-        <div class="eyebrow reveal">18:45 · demos · CP3 and CP4</div>
+        <div class="eyebrow reveal">18:45 · demos · Final Check Point</div>
         <h2 class="reveal">Two minutes per team</h2>
         <div class="cols-3 stagger">
             <div class="card accent-g">
@@ -891,7 +911,7 @@ is free until they arrive.
         </div>
         <p class="lede reveal">Applause for the best bug found, not only the best app.</p>
     </div>
-    <aside class="notes"><ul><li>4-5 teams at 2 minutes is 8 to 10 minutes, 18:45 to about 18:57. Strict timer. Teams that had no spotlight go first.</li><li>The demo is where CP3 (a refused double booking) and CP4 (run command, journal) are checked.</li></ul></aside>
+    <aside class="notes"><ul><li>4-5 teams at 2 minutes is 8 to 10 minutes, 18:45 to about 18:57. Strict timer. Teams that had no spotlight go first.</li><li>The demo is where the Final Check Point (refused double booking, run command, journal) is checked.</li></ul></aside>
 </section>
 
 <!-- 17 NEXT SESSIONS -->
@@ -925,12 +945,12 @@ is free until they arrive.
 <section class="slide title-slide bg-img bg-closing">
     <div class="bg-overlay"></div>
     <div class="slide-content">
-        <div class="eyebrow reveal">17:15 · build starts now</div>
-        <h1 class="reveal">Go <span class="g">build</span>.</h1>
-        <p class="lede reveal">CP1 at 17:35: spec and plan, no code. Then the first spotlight.</p>
+        <div class="eyebrow reveal">18:57 · thank you</div>
+        <h1 class="reveal">See you in <span class="g">session 2</span> ?</h1>
+        <p class="lede reveal">Thanks for building with us tonight.</p>
     </div>
     <div class="brand-mark"><svg viewBox="0 0 800 142" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dynatrace"><g id="Background"/><g id="Vertical"/><g id="Horizontal"/><g id="Dynatrace_Color"/><g id="Variants"><g><g><g><path d="M578.6 37.2 560.2 37.2C555 37.2 551.4 38.2 549.2 40.4 547 42.5 545.9 46.2 545.9 51.2L545.9 114.8 534.9 114.8 534.9 50.4C535 45.5 535.8 40.2 538.4 36.2 543.1 28.7 552.1 27.3 558.8 27.3L578.7 27.3 578.7 37.2Z" fill="currentColor"/></g><g><path d="M507.6 104.8C502.4 104.8 498.8 103.8 496.6 101.6 494.4 99.5 493.3 96 493.3 91L493.3 37.2 516.4 37.2 516.4 27.3 493.3 27.3 493.3 1 482.3 1 482.3 91.6C482.4 96.5 483.2 101.8 485.8 105.8 490.5 113.3 499.5 114.7 506.2 114.7L526.1 114.7 526.1 104.8 507.6 104.8Z" fill="currentColor"/></g><path d="M219.3 1 219.3 27.2 196.2 27.2C182.2 27.2 173.7 31.4 168.4 36.5 160.3 44.4 160.3 55.7 160.3 56.9 160.3 58.3 160.3 83.7 160.3 85.1 160.3 86.3 160.3 97.6 168.4 105.5 173.6 110.6 182.1 114.8 196.2 114.8L206.5 114.8C213.2 114.8 222.2 113.3 226.9 105.9 229.4 101.9 230.3 96.6 230.4 91.7L230.4 1 219.3 1ZM216 101.7C213.8 103.8 210.2 104.9 205 104.9L195 104.9C185.9 104.9 180.2 102.3 176.8 98.9 172.7 94.9 171.3 89.6 171.3 85.5L171.3 56.6C171.3 52.5 172.7 47.2 176.8 43.2 180.3 39.8 185.9 37.2 195 37.2L219.2 37.2 219.2 91.1C219.3 96 218.2 99.5 216 101.7Z" fill="currentColor"/><path d="M678.2 43.2C681.7 39.8 687.3 37.2 696.4 37.2L722.9 37.2 722.9 27.3 697.5 27.3C683.5 27.3 675 31.5 669.7 36.6 661.6 44.5 661.6 55.8 661.6 57 661.6 57.8 661.6 84.4 661.6 85.2 661.6 86.4 661.6 97.7 669.7 105.6 674.9 110.7 683.4 114.9 697.5 114.9L722.9 114.9 722.9 105 696.4 105C687.3 105 681.6 102.4 678.2 99 674.1 95 672.7 89.7 672.7 85.6L672.7 56.6C672.7 52.5 674.1 47.1 678.2 43.2Z" fill="currentColor"/><path d="M470.9 56.9C470.9 55.7 470.9 44.4 462.8 36.5 457.6 31.4 449.1 27.2 435 27.2L410.5 27.2 410.5 37.1 436.1 37.1C445.2 37.1 450.9 39.7 454.3 43.1 458.4 47.1 459.8 52.4 459.8 56.5L459.8 65 424.7 65C418 65 409 66.5 404.3 73.9 401.8 77.9 400.9 83.2 400.8 88.1L400.8 91.6C400.9 96.5 401.7 101.8 404.3 105.8 409 113.3 418 114.7 424.7 114.7L447 114.7C453.7 114.7 462.7 113.2 467.4 105.8 469.9 101.8 470.8 96.5 470.9 91.6 470.9 91.6 470.9 62.6 470.9 56.9ZM456.6 101.7C454.4 103.8 450.8 104.9 445.6 104.9L426.2 104.9C421 104.9 417.4 103.9 415.2 101.7 413 99.5 412 96 412 91.1L412 88.7C412 83.7 413.1 80.2 415.3 78.1 417.5 76 421.1 74.9 426.3 74.9L459.9 74.9 459.9 91.1C459.9 96 458.8 99.5 456.6 101.7Z" fill="currentColor"/><path d="M652.9 56.9C652.9 55.7 652.9 44.4 644.8 36.5 639.6 31.4 631.1 27.2 617 27.2L592.5 27.2 592.5 37.1 618.1 37.1C627.2 37.1 632.9 39.7 636.3 43.1 640.4 47.1 641.8 52.4 641.8 56.5L641.8 65 606.7 65C600 65 591 66.5 586.3 73.9 583.8 77.9 582.9 83.2 582.8 88.1L582.8 91.6C582.9 96.5 583.7 101.8 586.3 105.8 591 113.3 600 114.7 606.7 114.7L629 114.7C635.7 114.7 644.7 113.2 649.4 105.8 651.9 101.8 652.8 96.5 652.9 91.6 652.9 91.6 652.9 62.6 652.9 56.9ZM638.6 101.7C636.4 103.8 632.8 104.9 627.6 104.9L608.2 104.9C603 104.9 599.4 103.9 597.2 101.7 595 99.5 594 96 594 91.1L594 88.7C594 83.7 595.1 80.2 597.3 78.1 599.5 76 603.1 74.9 608.3 74.9L641.9 74.9 641.9 91.1C641.9 96 640.8 99.5 638.6 101.7Z" fill="currentColor"/><path d="M317.8 27.2 306.3 27.2 278.4 99.8 250.5 27.2 239.1 27.2 272.7 114.7 262.6 141 274.1 141Z" fill="currentColor"/><path d="M392.2 56.9C392.2 55.7 392.2 44.4 384.2 36.5 379.1 31.5 371 27.4 357.8 27.2L356.6 27.2C343.4 27.4 335.3 31.5 330.2 36.5 322.2 44.4 322.2 55.7 322.2 56.9 322.2 58.3 322.2 110.3 322.2 114.8L333.2 114.8 333.2 56.6C333.2 52.5 334.5 47.2 338.6 43.2 342 39.9 348.5 37.3 357.2 37.2 365.9 37.3 372.4 39.9 375.8 43.2 379.8 47.2 381.2 52.5 381.2 56.6L381.2 114.8 392.2 114.8C392.2 110.3 392.2 58.3 392.2 56.9Z" fill="currentColor"/><path d="M791 36.5C785.9 31.5 777.8 27.4 764.6 27.2L763.4 27.2C750.2 27.4 742.1 31.5 737 36.5 729 44.4 729 55.7 729 56.9L729 85.1C729 86.3 729 97.6 737 105.5 742.1 110.5 750.2 114.6 763.4 114.8L789.4 114.8 789.4 104.8 764 104.8C755.3 104.7 748.8 102.1 745.4 98.8 741.4 94.8 740 89.5 740 85.4L740 75.1 799 75.1 799 56.9C799.1 55.7 799.1 44.4 791 36.5ZM740.1 65.2 740.1 56.6C740.1 52.5 741.4 47.2 745.5 43.2 748.9 39.9 755.4 37.3 764.1 37.2 772.8 37.3 779.3 39.9 782.7 43.2 786.7 47.2 788.1 52.5 788.1 56.6L788.1 65.2 740.1 65.2Z" fill="currentColor"/></g><g><path d="M47.7 12.7C45.9 22.2 43.7 36.3 42.5 50.6 40.4 75.8 41.7 92.7 41.7 92.7L6.2 126.4C6.2 126.4 3.5 107.5 2.1 86.2 1.3 73 1 61.4 1 54.4 1 54 1.2 53.6 1.2 53.2 1.2 52.7 1.8 48 6.4 43.6 11.4 38.8 48.3 9.9 47.7 12.7Z" fill="#1966FF"/><path d="M47.7 12.7C45.9 22.2 43.7 36.3 42.5 50.6 42.5 50.6 3.2 45.9 1 55.4 1 54.9 1.7 49.1 6.3 44.7 11.3 39.9 48.3 9.9 47.7 12.7Z" fill="#1284EA"/><path d="M1 53.1C1 53.8 1 54.5 1 55.3 1.4 53.6 2.1 52.4 3.5 50.5 6.4 46.8 11.1 45.8 13 45.6 22.6 44.3 36.8 42.8 51.1 42.4 76.4 41.6 93.1 43.7 93.1 43.7L128.6 10C128.6 10 110 6.5 88.8 4 74.9 2.3 62.7 1.4 55.8 1 55.3 1 50.4 0.4 45.8 4.8 40.8 9.6 15.4 33.7 5.2 43.4 0.6 47.8 1 52.7 1 53.1Z" fill="#B4DC00"/><path d="M127.3 96.2C117.7 97.5 103.5 99.1 89.2 99.6 63.9 100.4 47.1 98.3 47.1 98.3L11.6 132.1C11.6 132.1 30.4 135.8 51.6 138.2 64.6 139.7 76.1 140.5 83.1 140.9 83.6 140.9 84.4 140.5 84.9 140.5 85.4 140.5 90.3 139.6 94.9 135.2 99.9 130.4 130.1 95.9 127.3 96.2Z" fill="#6F2DA8"/><path d="M127.3 96.2C117.7 97.5 103.5 99.1 89.2 99.6 89.2 99.6 91.9 139.1 82.4 140.8 82.9 140.8 89.4 140.5 94 136.1 99 131.3 130.1 95.9 127.3 96.2Z" fill="#591F91"/><path d="M84.5 141C83.8 141 83.1 140.9 82.3 140.9 84.1 140.6 85.3 140 87.2 138.6 91 135.9 92.2 131.2 92.6 129.3 94.3 119.8 96.6 105.7 97.7 91.4 99.7 66.2 98.5 49.4 98.5 49.4L134 15.6C134 15.6 136.6 34.4 138.1 55.7 139 69.6 139.3 81.9 139.4 88.7 139.4 89.2 139.8 94.1 135.2 98.5 130.2 103.3 104.8 127.5 94.7 137.2 89.9 141.6 85 141 84.5 141Z" fill="#49C2B3"/></g></g></g></svg></div>
-    <aside class="notes"><ul><li>Start the timer. Leave the checkpoint overview or the status board on screen during the build.</li></ul></aside>
+    <aside class="notes"><ul><li>Collect code and journals before people leave. The journals are what we compare in session 2.</li><li>Thank the spotlight teams and the best bug found.</li></ul></aside>
 </section>
 </main>
 
@@ -1057,7 +1077,7 @@ class SlidePresentation {
 /* === STATUS BOARD: state lives in this browser's localStorage only === */
 class StatusBoard {
     static TEAMS = 5;
-    static CHECKPOINTS = 4;
+    static CHECKPOINTS = 3;
     static STATES = ['todo', 'wip', 'done', 'help'];
     static LABELS = { todo: '-', wip: 'in progress', done: 'done', help: 'need help' };
     static KEY = 'ws-board-v2';

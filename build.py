@@ -119,7 +119,7 @@ TAG = re.compile(r"\[\[(?:([a-z]): )?(.+?)\]\]")
 TAGS_ONLY = re.compile(r"^(\s*\[\[.+?\]\])+\s*$")
 BLOCK_START = re.compile(r"^(\^ |#{1,3} |> |~ |- |:::|```|!! |!\[|@|<|\{.*\}$|\[\[)")
 PHOTO = re.compile(r"!\[(.+?)\]\((.+?)\)")
-IMAGE_TYPES = {".webp": "webp", ".jpg": "jpeg", ".jpeg": "jpeg", ".png": "png"}
+IMAGE_TYPES = {".webp": "webp", ".jpg": "jpeg", ".jpeg": "jpeg", ".png": "png", ".svg": "svg+xml"}
 
 
 def photo(caption, src):

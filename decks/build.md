@@ -11,10 +11,10 @@ extras: build
 
 # The ==parking== app.
 
-> Every team leaves today with a working parking booking app on a laptop. Any stack, any tool. Four checkpoints get us there together.
+> Every team leaves today with a working parking booking app on a laptop. Any stack, any tool. Two checkpoints and a final one get us there together.
 
 ::: meta-row reveal
-[[4 checkpoints]] [[b: 17:00 to 19:00, food included]] [[v: 4-5 teams]] [[o: runs locally]]
+[[3 checkpoints]] [[b: 17:00 to 19:00, food included]] [[v: 4-5 teams]] [[o: runs locally]]
 :::
 
 Notes:
@@ -26,7 +26,7 @@ Notes:
 
 ^ Thursday · 17:00 to 19:00
 
-## Three sprints, a checkpoint after each
+## Agenda: 3 Sprints, a Check Point after each
 
 ::: agenda reveal
 - [text-3] 17:00 | Welcome, food and drinks | General intro while people grab pizza
@@ -36,7 +36,7 @@ Notes:
 - [teal] 17:45 | Sprint 2 | Get it running: book, release, keep
 - [pink] 18:10 | Check Point 2 · pit stop | Spotlight, lessons so far, food refill
 - [teal] 18:20 | Sprint 3 | Rules hold, get demo-ready
-- [blue] 18:45 | Demos · Last Check Points | Every team
+- [blue] 18:45 | Final Check Point · Demos | Every team
 - [text-3] 18:57 | Close | What happens next
 :::
 
@@ -289,29 +289,27 @@ Notes:
 <!-- 08 CHECKPOINT OVERVIEW -->
 === slide
 
-^ Four checkpoints
+^ Two checkpoints and a final one
 
 ## Same finish line, your own route
 
 ::: cp-track stagger
 - CP1 · 17:35 | Spec & plan | spec.md written, stack chosen, plan agreed with the AI
-- CP2 · 18:10 | It runs, booking works | App starts on a laptop; book and release a spot; data survives a refresh
-- [dashed] Pit stop · 18:10 | What we learned | CP2 spotlight, lessons so far, tips, food refill
-- [pink] CP3 · 18:45 | Rules hold | Double booking, past dates and duplicates are refused
-- [teal] CP4 · 18:45 | Demo-ready | Run command and journal ready, checked as you step up to demo
+- CP2 · 18:10 | It runs, booking works | App starts on a laptop; book and release a spot; data survives a refresh. Then the pit stop: lessons so far, food refill
+- [teal] Final · 18:45 | Rules hold, demo-ready | Double booking, past dates and duplicates are refused; run command and journal ready
 :::
 
 ::: cols-2 stagger
 ::: card accent-g
 ### Every team covers every checkpoint
 
-How you get there is up to you. A spreadsheet that refuses a double booking passes CP3 as much as a React app does.
+How you get there is up to you. A spreadsheet that refuses a double booking passes the Final Check Point as much as a React app does.
 :::
 
 ::: card accent-b
 ### CP1 and CP2: 10 minutes each
 
-Hands off keyboards. A board call, one team in the spotlight, then catch-up for anyone behind. CP3 and CP4 are shown in the demos.
+Hands off keyboards. A board call, one team in the spotlight, then catch-up for anyone behind. The Final Check Point is shown in the demos.
 :::
 :::
 
@@ -496,7 +494,7 @@ Notes:
 - Mark the board from the tables while people refill. No separate board call here.
 - Count the hands out loud and write the numbers in the shared notes; they feed the session 2 summary.
 - Keep it to 10 minutes. It doubles as the food and drink refill, so say so: hands off keyboards, grab a slice, listen.
-- CP3 needs the time. Sprint 3 starts at 18:20 sharp.
+- The Final Check Point needs the time. Sprint 3 starts at 18:20 sharp.
 
 <!-- PIT STOP TIPS -->
 === slide
@@ -539,31 +537,31 @@ Repeating yourself? Put it in `CLAUDE.md`: run the app after each change, no new
 :::
 :::
 
-> All four point at CP3: prove it works, do not take the AI's word for it.
+> All four point at the Final Check Point: prove it works, do not take the AI's word for it.
 
 Notes:
 - Tip 01 is a true story from preparing this session. Tell it in 30 seconds.
 - Swap a tip for something you saw at the tables if it is more relevant.
 
-<!-- 12 CP3 -->
-=== slide style="--cp-color: var(--pink)"
+<!-- 12 FINAL -->
+=== slide style="--cp-color: var(--teal)"
 
 ::: cp-layout
 ::: cp-left reveal
-!! CP3
+!! Final
 
 ::: cp-meta
-[[o: 18:45]] [[o: Rules hold]]
+[[18:45]] [[Rules hold, demo-ready]]
 :::
 
-## Try to break it, and fail
+## Try to break it, then hand it over
 
-> The acceptance criteria, proven by the Breaker, not by the AI saying "all good".
+> The acceptance criteria, proven by the Breaker in your demo, not by the AI saying "all good". Then wrap up so someone else could run it.
 :::
 
 ::: cp-right stagger
 ::: card accent-o
-### Must show (each one refused, with a clear message)
+### Rules hold (each one refused, with a clear message)
 
 - [ ] Two bookings for the same spot on the same day
 - [ ] A booking for a date in the past
@@ -571,58 +569,24 @@ Notes:
 - [ ] Empty or nonsense input (no name, invalid date)
 :::
 
-::: card
-### How we check
-
-Breaker runs them live in your demo. Bonus: an automated test, shown failing on purpose.
-:::
-
-::: card accent-o
-### Behind?
-
-Paste the acceptance criteria and ask the AI to check each one against the code and tell you which fail, with evidence.
-:::
-:::
-:::
-
-Notes:
-- Ask the AI "what did you run to verify that?" Teams that get a claim without output should not mark CP3 done.
-
-<!-- 13 CP4 -->
-=== slide style="--cp-color: var(--teal)"
-
-::: cp-layout
-::: cp-left reveal
-!! CP4
-
-::: cp-meta
-[[18:45]] [[Demo-ready]]
-:::
-
-## Someone else could run it
-
-> Wrap up so the work survives today and can be compared in session 2.
-:::
-
-::: cp-right stagger
 ::: card accent-g
-### Must show
+### Demo-ready
 
 - [ ] A README with the one-line command to run it
-- [ ] `journal.md` filled in: models, usage before/after, best prompt, where it went wrong
-- [ ] A 2-minute demo planned: one booking, one refused double booking, one learning
-- [ ] Final commit; code shared with the organizers (repo link or zip)
+- [ ] `journal.md` filled in, final commit, code shared with the organizers
 :::
 
 ::: card accent-b
-### Done early?
+### Behind? Done early?
 
-Pick one: "my bookings" view, a week view, automated tests, or a nicer UI. Not login.
+Behind: ask the AI to check each acceptance criterion against the code and show which fail, with evidence. Done early: a "my bookings" view, a week view or automated tests. Not login.
 :::
 :::
 :::
 
 Notes:
+- Checked live in the demo: the Breaker runs the refusals, the team shows the run command and the journal.
+- Ask the AI "what did you run to verify that?" Teams that get a claim without output should not mark the Final Check Point done.
 - Collect code and journals at the end. The journals are what we compare in session 2.
 
 <!-- 14 STATUS BOARD -->
@@ -651,7 +615,7 @@ Notes:
 **Team / stack:**
 **Tools & models:**   e.g. Claude Code, Sonnet
 **Usage:**            before ___  after ___
-**Checkpoints:**      CP1 __ CP2 __ CP3 __ CP4 __
+**Checkpoints:**      CP1 __ CP2 __ Final __
 **Best prompt:**      (paste it)
 **Where it went wrong:**
 **How we caught it:**
@@ -671,7 +635,7 @@ Notes:
 <!-- 16 DEMOS -->
 === slide
 
-^ 18:45 · demos · CP3 and CP4
+^ 18:45 · demos · Final Check Point
 
 ## Two minutes per team
 
@@ -705,7 +669,7 @@ Your last checkpoint passed, and the time it took. Usage spent, if you measured 
 
 Notes:
 - 4-5 teams at 2 minutes is 8 to 10 minutes, 18:45 to about 18:57. Strict timer. Teams that had no spotlight go first.
-- The demo is where CP3 (a refused double booking) and CP4 (run command, journal) are checked.
+- The demo is where the Final Check Point (refused double booking, run command, journal) is checked.
 
 <!-- 17 NEXT SESSIONS -->
 === slide

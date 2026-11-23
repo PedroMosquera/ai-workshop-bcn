@@ -543,6 +543,30 @@ Notes:
 - Tip 01 is a true story from preparing this session. Tell it in 30 seconds.
 - Swap a tip for something you saw at the tables if it is more relevant.
 
+<!-- BLUEBOX -->
+=== slide
+
+^ Extra vitamin · last sprint, optional
+
+## Want an extra? Let Bluebox watch your app
+
+::: cols-2 stagger
+![Eyes into production for your coding agent](photos/bluebox.svg) {.logo}
+
+::: card accent-b
+### Your agent built it. Bluebox sees it run.
+
+Send your app's telemetry to your Dynatrace tenant, break a rule on purpose, and ask Bluebox what went wrong and how to fix it.
+
+[[b: <a href="https://bluebox.ai" target="_blank" rel="noopener">bluebox.ai</a>]] [[b: Log in with your Dynatrace-linked GitHub]]
+:::
+:::
+
+Notes:
+- Optional during the last sprint. With or without it, a team can pass the Final Check Point.
+- Do not sign up for a personal account on bluebox.ai: tenants are limited and kept for customers. Logging in with the GitHub account linked to your Dynatrace email connects Bluebox to your own Dynatrace tenant.
+- Getting started: the "Bluebox - Getting started" page on the AI-First SharePoint. Bugs and feedback: support@bluebox.ai.
+
 <!-- 12 FINAL -->
 === slide style="--cp-color: var(--teal)"
 
@@ -579,7 +603,7 @@ Notes:
 ::: card accent-b
 ### Behind? Done early?
 
-Behind: ask the AI to check each acceptance criterion against the code and show which fail, with evidence. Done early: a "my bookings" view, a week view or automated tests. Not login.
+Behind: ask the AI to check each acceptance criterion against the code and show which fail, with evidence. Done early: a "my bookings" view, a week view, automated tests, or Bluebox. Not login.
 :::
 :::
 :::

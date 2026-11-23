@@ -359,6 +359,19 @@ Notes:
 - The catch-up minutes are for teams marked need help. An organizer sits with them for the first 5 minutes of the next sprint.
 - Hold the 10 minutes. Cut questions, not the next sprint.
 
+<!-- SPRINT 1 GO -->
+=== slide
+
+^ Sprint 1 · 17:15 to 17:35 · 20 minutes
+
+# Let's ==go==.
+
+> Your route, your tools. Try something, look at what the AI did, keep what works.
+
+Notes:
+- Start a 20-minute timer. Leave the checkpoint overview or the status board on screen during the build.
+- Journalists: note usage before the first prompt.
+
 <!-- 09 CP1 -->
 === slide style="--cp-color: var(--teal)"
 
@@ -401,6 +414,18 @@ Borrow the spotlight team's spec layout. Then: "Read spec.md and ask me up to 5 
 
 Notes:
 - Teams that start coding before CP1 usually come back to it at CP2. Hold the line.
+
+<!-- SPRINT 2 GO -->
+=== slide
+
+^ Sprint 2 · 17:45 to 18:10 · 25 minutes
+
+# Let's ==go==.
+
+> Your route, your tools. Try something, look at what the AI did, keep what works.
+
+Notes:
+- Start a 25-minute timer. Organizers go first to the teams marked need help at CP1.
 
 <!-- 10 CP2 -->
 === slide style="--cp-color: var(--blue)"
@@ -566,6 +591,18 @@ Notes:
 - Optional during the last sprint. With or without it, a team can pass the Final Check Point.
 - Do not sign up for a personal account on bluebox.ai: tenants are limited and kept for customers. Logging in with the GitHub account linked to your Dynatrace email connects Bluebox to your own Dynatrace tenant.
 - Getting started: the "Bluebox - Getting started" page on the AI-First SharePoint. Bugs and feedback: support@bluebox.ai.
+
+<!-- SPRINT 3 GO -->
+=== slide
+
+^ Sprint 3 · 18:20 to 18:45 · 25 minutes
+
+# Let's ==go==.
+
+> Your route, your tools. Try something, look at what the AI did, keep what works.
+
+Notes:
+- Start a 25-minute timer. Remind teams that demos start at 18:45 sharp, ready or not.
 
 <!-- 12 FINAL -->
 === slide style="--cp-color: var(--teal)"
@@ -736,11 +773,12 @@ Notes:
 <!-- 18 CLOSE -->
 === slide .title-slide .bg-img .bg-closing
 
-^ 17:15 · build starts now
+^ 18:57 · thank you
 
-# Go ==build==.
+# See you in ==session 2== ?
 
-> CP1 at 17:35: spec and plan, no code. Then the first spotlight.
+> Thanks for building with us tonight.
 
 Notes:
-- Start the timer. Leave the checkpoint overview or the status board on screen during the build.
+- Collect code and journals before people leave. The journals are what we compare in session 2.
+- Thank the spotlight teams and the best bug found.

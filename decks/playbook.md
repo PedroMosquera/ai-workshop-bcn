@@ -231,44 +231,6 @@ The AI loves adding features. Naming what you won't build keeps it, and the bill
 Notes:
 - Same shape as the build deck's spec, generalized for any feature or ticket.
 
-<!-- 07 JOURNAL -->
-=== slide
-
-^ journal.md · everyone
-
-## Keep a log of how the AI was used
-
-::: cols-2
-``` {.reveal}
-# journal.md
-**Task:**
-**Tools & models:**    e.g. Claude Code, Sonnet
-**Usage:**             before ___  after ___
-**Best prompt:**       (paste it)
-**Where it went wrong:**
-**How I caught it:**
-**What I'd change next time:**
-**Rule to add?**       (CLAUDE.md / rules / guard)
-```
-
-::: stagger {style="display:flex; flex-direction:column; gap:clamp(.5rem,1.4vh,.9rem)"}
-::: card accent-g
-### Cost is part of the result
-
-Note usage before the first prompt and after the last. Compare tasks, not feelings.
-:::
-
-::: card accent-v
-### The last line is the point
-
-Every "where it went wrong" is a candidate rule or guard. That is how the setup grows.
-:::
-:::
-:::
-
-Notes:
-- In the workshop the Journalist role keeps this per team. Outside the workshop, one per task is enough.
-
 <!-- 08 COMMANDS -->
 === slide
 

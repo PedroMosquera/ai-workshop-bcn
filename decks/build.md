@@ -663,36 +663,6 @@ Notes:
 - Marks are saved in this browser only. Run the deck from the same laptop all session.
 - "Clear board" resets everything immediately, with no confirmation. Avoid it during the session.
 
-<!-- 15 JOURNAL -->
-=== slide
-
-^ The Journalist's template
-
-## journal.md
-
-::: cols-2
-``` {.reveal}
-# journal.md
-**Team / stack:**
-**Tools & models:**   e.g. Claude Code, Sonnet
-**Usage:**            before ___  after ___
-**Checkpoints:**      CP1 __ CP2 __ Final __
-**Best prompt:**      (paste it)
-**Where it went wrong:**
-**How we caught it:**
-**Next time we would:**
-```
-
-::: reveal
-> Apps will differ by stack. The journals show **how each team got there**, and what it cost.
-
-~ Note the clock time you reached each checkpoint. It tells us where teams lose time. {style="margin-top:.8rem"}
-:::
-:::
-
-Notes:
-- Start the journal at 17:15, not at the end. Usage "before" must be noted before the first prompt.
-
 <!-- 16 DEMOS -->
 === slide
 

@@ -19,7 +19,7 @@ extras: build
 
 Notes:
 - This deck starts after the general presentation. It only covers the build.
-- Clock times assume the general intro runs 17:00 to 17:05 while people grab food. If it runs long, every time after it shifts by the same amount.
+- Clock times assume the general intro runs 17:00 to 17:05. If it runs long, every time after it shifts by the same amount.
 
 <!-- 02 THE EVENING -->
 === slide
@@ -29,19 +29,18 @@ Notes:
 ## Agenda: 3 Sprints, a Check Point after each
 
 ::: agenda reveal
-- [text-3] 17:00 | Welcome, food and drinks | General intro while people grab pizza
+- [text-3] 17:00 | Welcome | General intro
 - [blue] 17:05 | Build brief | Mission, ask the room, scope, form 4-5 teams
 - [teal] 17:15 | Sprint 1 | Spec and plan, no code yet
 - [purple] 17:35 | Check Point 1 · spec & plan | Board call, spotlight team, catch-up
 - [teal] 17:45 | Sprint 2 | Get it running: book, release, keep
 - [pink] 18:10 | Check Point 2 · pit stop | Spotlight, lessons so far, food refill
 - [teal] 18:20 | Sprint 3 | Rules hold, get demo-ready
-- [blue] 18:45 | Final Check Point · Demos | Every team
+- [blue] 18:45 | Final Check Point · Demos | Every team, with pizza 🍕
 - [text-3] 18:57 | Close | What happens next
 :::
 
 Notes:
-- Food stays out the whole time. People eat during the intro and refill at the pit stop, so there is no separate meal break.
 - Building time is 3 sprints: 20, 25 and 25 minutes. If the intro overruns, shorten demos to 90 seconds, not a sprint.
 
 <!-- 02 THE MISSION -->
@@ -696,10 +695,11 @@ Your last checkpoint passed, and the time it took. Usage spent, if you measured 
 :::
 :::
 
-> Applause for the best bug found, not only the best app.
+> 🍕 Pizza arrives around 19:00: grab a slice while you watch. Applause for the best bug found, not only the best app.
 
 Notes:
 - 4-5 teams at 2 minutes is 8 to 10 minutes, 18:45 to about 18:57. Strict timer. Teams that had no spotlight go first.
+- 🍕 Pizza arrives around 19:00, so people can grab a slice during the demos.
 - The demo is where the Final Check Point (refused double booking, run command, journal) is checked.
 
 <!-- 17 NEXT SESSIONS -->

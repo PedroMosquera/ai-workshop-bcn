@@ -8,7 +8,7 @@ Read this before changing anything. The goal is that every edit, by a person or 
 
 | File | What it is |
 |---|---|
-| `index.html` | Landing page linking the decks. Small, no embedded assets. Edited by hand. |
+| `index.html` | Landing page linking the decks. Edited by hand. Open it as `index.html?qr` on the shared screen to show a QR code to the site; without `?qr` the QR stays hidden, so people who scan it do not see it again. |
 | `decks/build.md` | Source of the parking-app build brief: agenda, checkpoints, status board, demos. |
 | `decks/playbook.md` | Source of "A way of working with AI": CLAUDE.md, spec, journal, commands, guards, habits. |
 | `decks/README.md` | The markdown syntax for slides, cards, tags, code blocks and row layouts. |
@@ -19,6 +19,7 @@ Read this before changing anything. The goal is that every edit, by a person or 
 | `.github/workflows/build-decks.yml` | Rebuilds, tests, fit-checks and commits the decks; comments preview links on pull requests. |
 | `tools/fit-check.sh` | Checks every slide fits its viewport (4 sizes x 2 themes). Run it before every push. |
 | `tools/fit-check.html` | The in-browser checker the script drives. |
+| `tools/qr.swift` | Prints the inline SVG QR embedded in `index.html`: `swift tools/qr.swift <url>`. macOS only, no installs. Rerun it and replace the `<svg>` if the site URL changes. |
 
 ## How the decks were made
 
